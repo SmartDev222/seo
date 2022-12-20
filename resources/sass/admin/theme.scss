@@ -1,0 +1,231 @@
+// main: index.scss
+
+.card {
+	border: 0;
+	background-color: transparent;
+
+	.card-header {
+		background-color: #f0f3f7;
+		color: #808b9d;
+		font-size: 15px;
+		font-weight: 400;
+		padding: 0 22px;
+		text-align: left;
+		vertical-align: middle;
+		line-height: 46px;
+		border-bottom: 0;
+		border-radius: 6px 6px 0 0;
+	}
+
+	.card-body {
+		background-color: #fbfdff;
+		border: 1px solid #f0f3f7;
+		padding: 22px;
+		border-radius: 0 0 6px 6px;
+	}
+
+	.card-footer {
+		border: 0;
+		background-color: #f0f3f7;
+		color: #4d535c;
+		font-size: 15px;
+		font-weight: 400;
+		padding: 16px 22px;
+		text-align: left;
+		vertical-align: middle;
+		border-radius: 0 0 6px 6px;
+	}
+}
+
+.form-label {
+	display: flex;
+	align-items: center;
+	color: #7c87a7;
+	margin-bottom: 0.35rem;
+
+	svg {
+		margin-right: 8px;
+	}
+}
+
+.form-control {
+	&[type=text], &[type=email], &[type=password], &[type=file], &[type=number] {
+		border: 1px solid #ddd;
+		border-radius: 3px;
+		font-size: 13px;
+		color: #222;
+	}
+}
+
+textarea.form-control {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 13px;
+	color: #222;
+}
+
+.form-check-container {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	background-color: #fff;
+	padding: 7px 11px;
+}
+
+.form-check {
+	display: flex;
+	align-items: center;
+	margin-bottom: 0;
+
+	.form-check-input {
+		width: 15px;
+		height: 15px;
+		margin: 0 8px 0 -1.5em;
+	}
+
+	label {
+		font-size: 15px;
+		margin: 0;
+		line-height: 1;
+		user-select: none;
+	}
+}
+
+.form-select {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	font-size: 13px;
+	color: #222;
+}
+
+.form-control + .form-check-container {
+	margin-top: 5px;
+	padding: 4px 10px;
+
+	.form-check {
+		.form-check-input {
+			width: 13px;
+			height: 13px;
+			margin-right: 6px;
+		}
+
+		label {
+			font-size: 13px;
+			flex-grow: 1;
+		}
+	}
+}
+
+.modal {
+	position: relative;
+	display: block;
+	height: auto;
+	width: auto;
+
+	.modal-content {
+		display: block;
+		border: 0;
+	}
+
+	.modal-footer {
+		display: block;
+		border-top: 0;
+	}
+
+	.modal-title {
+		display: block;
+		p {
+			margin: 0;
+		}
+	}
+}
+
+.badge {
+	line-height: 1;
+	font-size: 11px;
+	font-weight: 500;
+
+	padding: 4px 7px;
+	border-radius: 3px;
+
+	&.bg-light {
+		background-color: #e5e5e5 !important;
+	}
+
+	&.help {
+		background-color: #999;
+		width: 1em;
+		height: 1em;
+		border-radius: 30px;
+		overflow: hidden;
+		padding: 0;
+		font-size: inherit;
+		vertical-align: middle;
+		margin: 0 2px;
+		cursor: help;
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
+	}
+}
+
+.nav-pills {
+	button.nav-link {
+		display: flex;
+		align-items: center;
+		width: 100%;
+		text-align: left;
+		color: #333;
+
+		svg {
+			width: 18px;
+			height: 18px;
+			margin-right: 8px;
+		}
+
+		&:hover {
+			background-color: rgba(0, 0, 0, 0.05);
+		}
+
+		&.active {
+			color: #fff;
+
+			&:hover {
+				background-color: #0d6efd;
+			}
+		}
+	}
+}
+
+.card {
+	.card-introduction {
+		background-color: #fbfdff;
+		color: #808b9d;
+		font-size: 15px;
+		font-weight: 400;
+		padding: 22px;
+		border: 1px solid #f0f3f7;
+		border-bottom: 0;
+		border-radius: 6px 6px 0 0;
+
+		p {
+			font-size: 14px;
+
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.card-body:first-of-type {
+		border-top-left-radius: 6px;
+		border-top-right-radius: 6px;
+	}
+}
+
+pre.snippet {
+	background-color: #fff;
+	border-radius: 6px;
+	padding: 20px;
+}

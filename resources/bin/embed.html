@@ -1,0 +1,9 @@
+<script type="text/javascript">
+  (function(id) {
+    var eventMethod = (window.addEventListener ? "addEventListener" : "attachEvent"), lh = -1;
+    window[eventMethod](eventMethod == "attachEvent" ? "onmessage" : "message", function(e) {
+      if (e.data.indexOf(id + ':') != 0) return; var h = parseInt(e.data.substring(id.length + 1), 10);
+      if (lh != h) document.getElementById(id).style.height = h + 'px'; lh = h;
+    }, false);
+  })("$id");
+</script>

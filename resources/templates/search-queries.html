@@ -1,0 +1,47 @@
+<div class="table-container">
+    <h2>{{ "Top Search Queries" | rt }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="50px"></th>
+                <th>{{ "Keyword" | rt }}</th>
+                <th class="center" width="120px">{{ "Rank" | rt }}</th>
+                <th class="center" width="120px">{{ "Volume" | rt }}</th>
+                <th class="center" width="120px">{{ "CPC" | rt }}</th>
+                <th class="center" width="120px">{{ "Difficulty" | rt }}</th>
+                <th class="center" width="120px">{{ "Clicks" | rt }}</th>
+                <th class="center" width="120px">{{ "Homepages" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for keyword in keywords %}
+                <tr>
+                    <td>
+                        <img class="flag" src="{{ path }}resources/images/countries/{{ keyword.countryCode }}.svg">
+                    </td>
+                    <td>
+                        <div class="ellipsis">{{ keyword.keyword }}</div>
+                    </td>
+                    <td class="center">{{ keyword.rank ?? '?' }}</td>
+                    <td class="center">{{ (keyword.searchVolume ?? 0) | number_format }}</td>
+                    <td class="center">
+                        {% if keyword.broadCostPerClick %}
+                            ${{ keyword.broadCostPerClick | number_format(2) }}
+                        {% else %}
+                            –
+                        {% endif %}
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ keyword.rankingDifficulty ?? 0 }}</div>
+                            <div class="circle" style="background-color: {{ difficulty_color(keyword.rankingDifficulty ?? 0) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">{{ (keyword.seoClicks ?? 0) | number_format }}</td>
+                    <td class="center">{{ keyword.rankingHomepages ?? 0 }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

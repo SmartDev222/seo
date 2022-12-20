@@ -1,0 +1,82 @@
+<div class="form-container">
+    <h2>{{Test Another Page}}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="label">
+                <label class="gray">[[SITE]]</label>
+            </div>
+            <div class="input">
+                <input type="text" class="text-input" name="path" value="[[PATH]]" />
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{Test}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="stats">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[NUM_LINKS]]</h3>
+                <span>{{total links}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[NUM_EXTERNAL]]</h3>
+                <span>{{external}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[NUM_INTERNAL]]</h3>
+                <span>{{internal}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[NUM_NOFOLLOW]]</h3>
+                <span>{{nofollow external}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="sticky" id="backlinksSticky">
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{Link}}</th>
+                        <th width="250px">{{Anchor text}}</th>
+                        <th width="140px" class="center">{{Type}}</th>
+                        <th width="120px" class="center">{{Follow}}</th>
+                    </tr>
+                </thead>
+            </table>
+            <a class="up"></a>
+        </div>
+    </div>
+</div>
+
+<div class="table-container">
+    <h2>{{Links}}</h2>
+
+    <table data-sticky="backlinksSticky">
+        <thead>
+            <tr>
+                <th>{{Link}}</th>
+                <th width="250px">{{Anchor text}}</th>
+                <th width="140px" class="center">{{Type}}</th>
+                <th width="120px" class="center">{{Follow}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            [[LINKS]]
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,30 @@
+Icon Licenses
+------------------------
+
+The icons in this directory are NOT free and a license MUST be obtained for use outside of SEO Studio. Here
+is an overview of your rights.
+
+- You may not sell these icons on their own or as part of a different application.
+- You may not publish these icons in any open-source project.
+- You may not redistribute these icons except as a part of SEO Studio and where applicable by your license.
+- You may not use these icons outside of SEO Studio, without obtaining your own indepedent license.
+
+
+Source
+------------------------
+
+These icons were approved by the author (listed below) for inclusion in SEO Studio applications developed by Webfector
+(developer Bailey Herbert) on January 30, 2014.
+
+Author: introwiz1
+Item: https://graphicriver.net/item/seo-internet-marketing-icons/4432000
+License: Extended
+
+
+Permission
+------------------------
+
+Permission for usage in this software, as well as an extended license for each edition, has been acquired.
+Do not use these icons outside of this software without purchasing an appropriate license.
+
+For more information, contact me at licensing@baileyherbert.com.

@@ -1,0 +1,50 @@
+<div class="table-container">
+    <h2>{{ "Top Referrers" | rt }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="75px" class="center">#</th>
+                <th>{{ "Domain" | rt }}</th>
+                <th class="center" width="120px">{{ "Backlinks" | rt }}</th>
+                <th class="center" width="120px">{{ "Dofollow" | rt }}</th>
+                <th class="center" width="100px" title="{{ "Domain Authority" | rt | e('html_attr') }}">{{ "DA" | rt }}</th>
+                <th width="140px" class="center">{{ "Found" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, ref in referrers %}
+                <tr>
+                    <td class="center">{{ i + 1 }}</td>
+                    <td>
+                        <div class="ellipsis">
+                            <a href="http://{{ ref.refdomain | e('html_attr') }}" target="_blank" rel="noopener nofollow" title="{{ ref.refdomain | e('html_attr') }}">
+                                <img class="favicon" src="https://www.google.com/s2/favicons?domain={{ ref.refdomain }}">
+                                {{ ref.refdomain }}
+                            </a>
+                        </div>
+                    </td>
+                    <td class="center">
+                        {{ ref.backlinks | number_format }}
+                    </td>
+                    <td class="center">
+                        {{ ref.dofollow_backlinks | number_format }}
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ ref.domain_inlink_rank }}</div>
+                            <div class="circle" style="background-color: {{ authority_color(ref.domain_inlink_rank) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">
+                        {{ ref.first_seen }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6" class="center">{{ "Nothing to show." | rt }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

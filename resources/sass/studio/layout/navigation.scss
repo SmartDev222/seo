@@ -1,0 +1,213 @@
+// main: ../index.scss
+
+header {
+    background-color: #313d4c;
+    padding: 0 20px;
+
+    .flex {
+        display: flex;
+        align-items: stretch;
+        justify-content: space-between;
+
+        .nav-container {
+            flex: 0 1;
+            display: flex;
+            align-items: stretch;
+        }
+
+        .break {
+            flex: 0 0 0;
+        }
+
+        .nav-toggle {
+            flex: 0 1;
+            display: none;
+            align-self: center;
+        }
+    }
+
+    .nav-toggle a.toggle {
+        display: inline-block;
+        border-radius: 3px;
+        padding: 15px;
+        cursor: pointer;
+
+        div {
+            width: 20px;
+            height: 2px;
+            margin: 3px auto;
+            background-color: #eee;
+        }
+    }
+
+    .logo.image {
+        display: block;
+        text-decoration: none;
+
+        margin: 30px 0;
+
+        @media (max-width: 768px) {
+            margin: 25px 0;
+        }
+
+        img {
+            width: auto;
+        }
+
+        &.small {
+            img {
+                height: 45px;
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    height: 35px;
+                }
+            }
+        }
+
+        &.medium {
+            img {
+                height: 54px;
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    height: 40px;
+                }
+            }
+        }
+
+        &.large {
+            img {
+                height: 60px;
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    height: 50px;
+                }
+            }
+        }
+
+        &.xlarge {
+            img {
+                height: 70px;
+            }
+
+            @media (max-width: 768px) {
+                img {
+                    height: 60px;
+                }
+            }
+        }
+    }
+
+    nav {
+        display: flex;
+        align-items: stretch;
+
+        ul {
+            display: flex;
+
+            li {
+                a {
+                    position: relative;
+                    display: inline-block;
+                    margin: 0 0 0 35px;
+                    padding: 29px 0;
+
+                    text-align: center;
+                    text-transform: uppercase;
+                    font-size: 13px;
+                    font-weight: 400;
+                    color: #ccc;
+                    letter-spacing: 0.3px;
+
+                    height: 100%;
+
+                    -webkit-font-smoothing: antialiased;
+
+                    &:hover, &:focus {
+                        text-decoration: none;
+                        color: #fff;
+                    }
+
+                    & > div {
+                        color: inherit;
+                        font-size: 25px;
+                        line-height: 35px;
+                    }
+
+                    .arrow-down {
+                        position: absolute;
+                        bottom: 0;
+                        left: 50%;
+                        margin-left: -6px;
+                        width: 0;
+                        height: 0;
+                        border-left: 6px solid transparent;
+                        border-right: 6px solid transparent;
+                        border-bottom: 6px solid #fff;
+                    }
+
+                    .arrow-down.dark { border-bottom-color: #29313b; }
+                    .arrow-down.home { border-bottom-color: #2196F3; }
+                    .arrow-down.blue { border-bottom-color: #2196F3; }
+                    .arrow-down.tool { border-bottom-color: #3f4e61; }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 768px) {
+        .flex {
+            flex-wrap: wrap;
+
+            .nav-toggle {  display: block; }
+            .break { flex: 0 0 100%; }
+            .nav-container { flex: 0 0 100%; }
+        }
+
+        nav.navigation {
+            display: none;
+            overflow-y: hidden;
+            padding-bottom: 10px;
+
+            ul {
+                display: block;
+
+                li {
+                    display: block;
+
+                    a {
+                        display: block;
+                        margin: 0;
+                        text-align: left;
+                        padding: 10px 0;
+                        font-size: 14px;
+                        text-transform: none;
+
+                        .icon {
+                            display: none;
+                        }
+
+                        .arrow-down {
+                            position: relative;
+                            display: inline-block;
+                            left: auto;
+                            bottom: auto;
+                            border: 0;
+                            background-color: #fff;
+                            width: 6px;
+                            height: 6px;
+                            margin: 0 0 0 6px;
+                            border-radius: 10px;
+                            vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

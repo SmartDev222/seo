@@ -1,0 +1,13 @@
+<script type="text/javascript">
+  (function(id) {
+    var eventMethod = (window.addEventListener ? "addEventListener" : "attachEvent");
+    window[eventMethod](eventMethod == "attachEvent" ? "onmessage" : "message", function(e) {
+      if (e.data.indexOf(id + '#') != 0) return; var args = JSON.parse(e.data.substring(id.length + 1));
+      var el = document.createElement('form'); el.action = args.action; el.method = args.method;
+      for (var i = 0; i < args.inputs.length; i++) {
+        var params = args.inputs[i]; var input = document.createElement('input'); input.type = 'hidden';
+        input.name = params.name; input.value = params.value; el.append(input);
+      } document.body.append(el); el.submit();
+    }, false);
+  })("$id");
+</script>

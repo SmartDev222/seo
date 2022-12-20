@@ -1,0 +1,18 @@
+// main: index.scss
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #e9e9e9;
+
+    &.rtl {
+        direction: rtl;
+    }
+
+    &.margin-top {
+        padding-top: 40px;
+    }
+
+    &.embed {
+        background-color: transparent;
+    }
+}

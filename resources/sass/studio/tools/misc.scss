@@ -1,0 +1,28 @@
+// main: ../index.scss
+
+p {
+    &.success-label {
+        color: #71ab6f;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    &.error-label {
+        color: #d03d3d;
+        font-size: 18px;
+        margin: 0;
+    }
+}
+
+.red-label {
+    background: #FF4B4B;
+    padding: 1px 3px;
+    color: #fff;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 4px 0 0 0;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+}

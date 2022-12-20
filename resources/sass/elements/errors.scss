@@ -1,0 +1,33 @@
+// main: ../index.scss
+
+.error, .error-fixed {
+    background: #f44336;
+    font-size: 15px;
+    color: #fff;
+    padding: 11px 20px;
+    margin: 15px 0;
+
+    border-radius: 2px;
+
+    &.wide {
+        margin: 0;
+        padding: 15px 20px;
+        border-radius: 0;
+    }
+}
+
+.success {
+    background: #2b921d;
+    font-size: 15px;
+    color: #fff;
+    padding: 11px 20px;
+    margin: 15px 0;
+
+    border-radius: 2px;
+
+    &.wide {
+        margin: 0;
+        padding: 15px 20px;
+        border-radius: 0;
+    }
+}

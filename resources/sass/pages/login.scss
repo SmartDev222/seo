@@ -1,0 +1,113 @@
+// main: ../index.scss
+
+section.login-form {
+    padding: 100px 20px;
+
+    form {
+        margin: 0 auto;
+        max-width: 400px;
+    }
+
+    label {
+        display: block;
+        font-size: 17px;
+        margin: 0 0 3px;
+    }
+
+    input[type=text], input[type=password] {
+        border: 1px solid #ddd;
+        background-color: #fff;
+
+        height: 45px;
+        padding: 0 15px;
+        margin: 0 0 10px;
+
+        font: inherit;
+        font-size: 17px;
+        font-weight: 400;
+        color: #555;
+
+        width: 100%;
+        display: block;
+
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+        &:focus {
+            border-color: #44a4ff;
+            outline: none;
+        }
+    }
+
+    input[type=submit] {
+        background-color: #3d8dc5;
+        border: 1px solid #3d8dc5;
+
+        height: 45px;
+        padding: 0 15px;
+
+        letter-spacing: 0.2px;
+        font: inherit;
+        font-size: 17px;
+        font-weight: 400;
+        color: #fff;
+
+        width: 100%;
+        display: block;
+
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+
+    h2 {
+        text-align: center;
+        margin: 0;
+        padding: 0 0 15px;
+
+        font-size: 21px;
+    }
+
+    .info {
+        padding: 20px 0 0;
+
+        font-size: 14px;
+        text-align: center;
+
+        .sep {
+            display: inline-block;
+            color: #aaa;
+            padding: 0 5px;
+            cursor: default;
+            user-select: none;
+        }
+    }
+
+    .legal-container {
+        padding: 6px 1px 11px;
+    }
+
+    .legal {
+        padding: 3px 0;
+
+        label {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            line-height: 1;
+        }
+
+        input {
+            margin: 0 8px 0 0;
+        }
+    }
+}

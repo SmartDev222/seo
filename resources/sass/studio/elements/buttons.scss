@@ -1,0 +1,54 @@
+// main: ../index.scss
+
+template {
+	display: none;
+}
+
+a.loadable, button.loadable {
+	position: relative;
+
+	.loadable-overlay {
+		display: none;
+	}
+
+	&.triggered {
+		cursor: progress !important;
+		border-color: #444 !important;
+		color: transparent !important;
+
+		.loadable-overlay {
+			display: flex;
+
+			align-items: center;
+			justify-content: center;
+
+			position: absolute;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+
+			border-radius: inherit;
+			background-color: rgba(50, 50, 50, 0.8);
+
+			backdrop-filter: grayscale(100%);
+
+			svg {
+				animation-name: spin;
+				animation-duration: 750ms;
+				animation-iteration-count: infinite;
+				animation-timing-function: linear;
+				stroke: #fff;
+
+				width: 1.25em;
+				height: 1.25em;
+				user-select: none;
+			}
+		}
+	}
+}
+
+@keyframes spin {
+    from { transform:rotate(0deg); }
+    to { transform:rotate(360deg); }
+}

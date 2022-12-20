@@ -1,0 +1,168 @@
+<div class="form-container">
+    <h2>{{ "Enter Keyword" | rt }}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="input">
+                <input type="text" class="text-input" name="keyword" value="{{ keyword | e('html_attr') }}" />
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{ "Test" | rt }}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="table-container">
+    <h2>{{ "Competition" | rt }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="center" width="100px">{{ "Rank" | rt }}</th>
+                <th>{{ "Website" | rt }}</th>
+                <th class="center" width="100px" title="{{ "Page Authority" | rt | e('html_attr') }}">{{ "PA" | rt }}</th>
+                <th class="center" width="100px" title="{{ "Domain Authority" | rt | e('html_attr') }}">{{ "DA" | rt }}</th>
+                <th class="center" width="130px">{{ "Backlinks" | rt }}</th>
+                <th class="center" width="130px">{{ "Dofollow" | rt }}</th>
+                <th class="center" width="130px">{{ "Domains" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, result in results %}
+                <tr class="{{ result.is_target ? 'highlight' : '' }}">
+                    <td class="center">{{ result.rank }}</td>
+                    <td>
+                        <div class="ellipsis">
+                            <strong>
+                                <img class="favicon" src="https://www.google.com/s2/favicons?domain={{ result.host }}">
+                                {{ result.title }}
+                            </strong>
+                        </div>
+                        <div class="ellipsis">
+                            <a href="{{ result.url | e('html_attr') }}" target="_blank" rel="noopener nofollow" title="{{ result.url | e('html_attr') }}">
+                                {{ result.url }}
+                            </a>
+                        </div>
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ result.inlink_rank }}</div>
+                            <div class="circle" style="background-color: {{ authority_color(result.inlink_rank) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ result.domain_inlink_rank }}</div>
+                            <div class="circle" style="background-color: {{ authority_color(result.domain_inlink_rank) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">
+                        {% if result.metrics.backlinks < 0 or result.metrics.backlinks > 2000000000 %}
+                            2,000,000,000+
+                        {% else %}
+                            {{ result.metrics.backlinks | number_format }}</td>
+                        {% endif %}
+                    </td>
+                    <td class="center">
+                        {% if result.metrics.dofollow_backlinks < 0 or result.metrics.dofollow_backlinks > 2000000000 %}
+                            2,000,000,000+
+                        {% else %}
+                            {{ result.metrics.dofollow_backlinks | number_format }}</td>
+                        {% endif %}
+                    </td>
+                    <td class="center">
+                        {% if result.metrics.refdomains < 0 or result.metrics.refdomains > 2000000000 %}
+                            2,000,000,000+
+                        {% else %}
+                            {{ result.metrics.refdomains | number_format }}</td>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="4">
+                        {{ "Nothing to show." | rt }}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{%if showTarget %}
+<div class="table-container">
+    <h2>{{ "Your Website" | rt }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th class="center" width="100px">{{ "Rank" | rt }}</th>
+                <th>{{ "Website" | rt }}</th>
+                <th class="center" width="100px" title="{{ "Page Authority" | rt | e('html_attr') }}">{{ "PA" | rt }}</th>
+                <th class="center" width="100px" title="{{ "Domain Authority" | rt | e('html_attr') }}">{{ "DA" | rt }}</th>
+                <th class="center" width="130px">{{ "Backlinks" | rt }}</th>
+                <th class="center" width="130px">{{ "Dofollow" | rt }}</th>
+                <th class="center" width="130px">{{ "Domains" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="center">
+                    {% if target.rank < 0 %}
+                        ?
+                    {% else %}
+                        {{ target.rank }}
+                    {% endif %}
+                </td>
+                <td>
+                    <div class="ellipsis">
+                        <strong>
+                            <img class="favicon" src="https://www.google.com/s2/favicons?domain={{ target.host }}">
+                            {{ target.host }}
+                        </strong>
+                    </div>
+                    <div class="ellipsis">
+                        <a href="{{ target.url | e('html_attr') }}" target="_blank" rel="noopener nofollow" title="{{ target.url | e('html_attr') }}">
+                            {{ target.url }}
+                        </a>
+                    </div>
+                </td>
+                <td class="center">
+                    <div class="colored-value">
+                        <div class="value">{{ target.inlink_rank }}</div>
+                        <div class="circle" style="background-color: {{ authority_color(target.inlink_rank) }}"></div>
+                    </div>
+                </td>
+                <td class="center">
+                    <div class="colored-value">
+                        <div class="value">{{ target.domain_inlink_rank }}</div>
+                        <div class="circle" style="background-color: {{ authority_color(target.domain_inlink_rank) }}"></div>
+                    </div>
+                </td>
+                <td class="center">
+                    {% if target.metrics.backlinks < 0 or target.metrics.backlinks > 2000000000 %}
+                        2,000,000,000+
+                    {% else %}
+                        {{ target.metrics.backlinks | number_format }}</td>
+                    {% endif %}
+                </td>
+                <td class="center">
+                    {% if target.metrics.dofollow_backlinks < 0 or target.metrics.dofollow_backlinks > 2000000000 %}
+                        2,000,000,000+
+                    {% else %}
+                        {{ target.metrics.dofollow_backlinks | number_format }}</td>
+                    {% endif %}
+                </td>
+                <td class="center">
+                    {% if target.metrics.refdomains < 0 or target.metrics.refdomains > 2000000000 %}
+                        2,000,000,000+
+                    {% else %}
+                        {{ target.metrics.refdomains | number_format }}</td>
+                    {% endif %}
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+{% endif %}

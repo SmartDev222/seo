@@ -1,0 +1,51 @@
+// main: index.scss
+
+body.embed {
+	.container {
+		padding-left: 5px;
+		padding-right: 5px;
+	}
+
+	section.tool {
+		padding: 10px 0 0;
+
+		.form-container, .text-container, .table-container, .stats {
+			background-color: #fcfcfc;
+			box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	section.embedded {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+
+		&:first-child {
+			margin-top: 0 !important;
+		}
+
+		&:last-child {
+			margin-bottom: 0 !important;
+		}
+	}
+
+	section.embed.no-header section.tool {
+		padding-top: 0;
+	}
+
+	section.title.tool-title {
+		background-color: #3f4e61;
+		padding: 25px 20px;
+		border-radius: 4px;
+		margin: 5px;
+	}
+
+	section.website.alt {
+		border-radius: 4px;
+		margin: 5px;
+		margin-bottom: 0;
+	}
+
+	.container {
+		width: auto !important;
+	}
+}

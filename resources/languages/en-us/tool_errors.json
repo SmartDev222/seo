@@ -1,0 +1,22 @@
+{
+    "Invalid path": "Invalid path",
+    "Robots.txt file was not found (error {$1}) at {$2}": "Robots.txt file was not found (error {$1}) at {$2}",
+    "Robots.txt is temporarily unavailable (error {$1}) at {$2}": "Robots.txt is temporarily unavailable (error {$1}) at {$2}",
+    "Failed to download webpage: {$1}": "Failed to download webpage: {$1}",
+    "Failed to connect to {$1}: {$2}": "Failed to connect to {$1}: {$2}",
+    "Connection to backlink service failed.": "Connection to backlink service failed.",
+    "Authentication failed for backlink service.": "Authentication failed for backlink service.",
+    "Failed to write file to {$1}": "Failed to write file to {$1}",
+    "Unknown error.": "Unknown error.",
+    "Backlink service not authenticated.": "Backlink service not authenticated.",
+    "Couldn't connect to {$1}": "Couldn't connect to {$1}",
+    "Robots.txt file exceeds the Google size limit of 500KB. Please reduce the file size.": "Robots.txt file exceeds the Google size limit of 500KB. Please reduce the file size.",
+    "Timeout": "Timeout",
+    "Invalid security token": "Invalid security token",
+    "Invalid sitemap": "Invalid sitemap",
+    "No sitemaps found to submit": "No sitemaps found to submit",
+    "No referring sites found.": "No referring sites found.",
+    "No runner configured": "No runner configured",
+    "No outputter configured": "No outputter configured",
+    "Missing template file {$1}": "Missing template file {$1}"
+}

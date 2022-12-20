@@ -1,0 +1,220 @@
+// main: ../index.scss
+
+.table-container {
+    margin: 0 0 25px;
+
+    background-color: #fff;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+
+    overflow-x: auto;
+
+    .options {
+        float: right;
+        padding: 24px 25px 0 0;
+
+        .option {
+            display: inline-block;
+            padding: 5px 18px;
+            color: #333;
+            border: 1px solid #333;
+
+            border-radius: 100px;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+
+            font-size: 15px;
+            text-decoration: none;
+
+            &.green {
+                color: #4CAF50;
+                border: 1px solid #4CAF50;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #4CAF50;
+                }
+            }
+
+            &.blue {
+                color: #3f91ca;
+                border: 1px solid #3f91ca;
+
+                &:hover {
+                    color: #fff;
+                    background-color: #3f91ca;
+                }
+            }
+        }
+    }
+
+    h2 {
+        font-size: 21px;
+        padding: 25px;
+    }
+
+    table {
+        min-width: 100%;
+        margin: 0;
+        border: 0;
+        padding: 0;
+
+        @media only screen and (max-width: 991px) {
+            white-space: nowrap;
+        }
+
+        thead tr th {
+            border-bottom: 2px solid #eef3f6;
+            padding: 6px 15px;
+
+            font-size: 13px;
+            color: #9bafb6;
+            text-transform: uppercase;
+            text-align: left;
+            letter-spacing: 0.2px;
+
+            &.center { text-align: center; }
+            &.shrink {
+                width: 0.1%;
+                white-space: nowrap;
+            }
+
+            &:first-of-type { padding-left: 25px; }
+            &:last-of-type { padding-right: 25px; }
+        }
+
+        tbody tr {
+            td {
+                max-width: 0;
+                padding: 15px 15px;
+                font-size: 13px;
+                color: #555;
+                word-break: break-all;
+                border-bottom: 2px solid #eef3f6;
+                vertical-align: middle;
+
+                &.center { text-align: center; word-break: normal; }
+                &.shrink {
+                    width: 0.1%;
+                    white-space: nowrap;
+                }
+                &:first-of-type { padding-left: 25px; }
+                &:last-of-type { padding-right: 25px; }
+            }
+
+            &.odd td {
+                background-color: #f6fbfc;
+            }
+
+            &.highlight td {
+                background-color: #eafcff;
+            }
+        }
+    }
+
+    pre {
+        border-top: 2px solid #eef3f6;
+        padding: 20px 25px;
+        color: #666;
+        font-size: 13px;
+    }
+}
+
+.sticky {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-bottom: 2px solid #eef3f6;
+    background-color: #fff;
+
+    .container table thead tr th {
+        padding-top: 10px;
+        padding-bottom: 10px;
+        border-bottom: 0;
+    }
+
+    .table-container {
+        margin: 0;
+    }
+
+    .up {
+        display: inline-block;
+        cursor: pointer;
+        width: 24px;
+        height: 24px;
+
+        background-image: url(../images/up36.png);
+        background-repeat: no-repeat;
+        background-size: 100% auto;
+
+        position: absolute;
+        right: 6px;
+        top: 6px;
+    }
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.colored-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+
+    .value {
+        line-height: 11px;
+    }
+
+    .circle {
+        width: 11px;
+        height: 11px;
+        border-radius: 11px;
+    }
+}
+
+img.favicon {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+img.flag {
+    border-radius: 3px;
+    width: 26px;
+}
+
+td.serp {
+    .serp-title {
+        font-size: 1.1em;
+
+        strong {
+            color: #1a0dab;
+            font-weight: 500;
+        }
+
+        .favicon {
+            margin-top: -3px;
+        }
+    }
+
+    .serp-citation {
+        font-size: 1.1em;
+        color: #006621;
+        margin-bottom: 3px;
+    }
+
+    .serp-description {
+        font-size: 1.1em;
+        color: #666;
+        max-width: 610px;
+    }
+}

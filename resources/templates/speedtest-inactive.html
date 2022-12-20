@@ -1,0 +1,33 @@
+<style type="text/css">
+    .status-label {
+        display: inline-block;
+        background-color: #999;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #fff;
+        margin-right: 5px;
+    }
+
+    .status-label.blue { background-color: #3da4f0; }
+    .status-label.green { background-color: #71c242; }
+    .status-label.orange { background-color: #fdb646; }
+</style>
+
+<div class="form-container">
+    <h2>{{Select Region}}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="input">
+                <select name="region" style="border: 1px solid #ddd; border-radius: 3px; height: 28px; margin: 0px 10px 0 0px; padding: 0 0 0 5px; font: inherit; font-size: 13px;">
+                    [[REGIONS]]
+                </select>
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{Test}}</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,398 @@
+// main: ../index.scss
+
+section.website {
+    background-color: #29313b;
+    padding: 0px 20px;
+
+    &.alt {
+        background-color: #3a4858;
+    }
+
+    .site-selector {
+        display: flex;
+    }
+
+    .select {
+        position: relative;
+        z-index: 1000;
+        flex: 0 0 48px;
+        padding-left: 6px;
+        align-self: center;
+        justify-self: center;
+
+        &.project {
+            flex: 1 0 100%;
+            cursor: pointer;
+        }
+
+        .button {
+            cursor: pointer;
+
+            height: 42px;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 5px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            &.project {
+                display: inline-block;
+                background-color: transparent;
+                border-radius: 0;
+                margin-left: 10px;
+                height: auto;
+            }
+
+            .arrow-down {
+                display: inline-block;
+                vertical-align: middle;
+                width: 0;
+                height: 0;
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 5px solid rgba(255, 255, 255, .8);
+            }
+        }
+
+        .label {
+            display: inline-block;
+            padding: 30px 0;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            color: #fff;
+        }
+
+        .dropdown {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+
+            padding: 4px 0 0;
+
+            background: #3e4b5b;
+            border-radius: 3px;
+            box-shadow: 0px -1px 0px #515f71;
+
+            min-width: 220px;
+
+            ul li a {
+                display: block;
+                color: #b7c0cb;
+                font-size: 15px;
+
+                padding: 9px 25px;
+
+                div {
+                    display: inline-block;
+                    vertical-align: middle;
+                    margin: 3px 7px 0 0;
+                }
+
+                &:hover {
+                    text-decoration: none;
+                    background-color: rgba(255, 255, 255, 0.1);
+                }
+
+                &.working {
+                    cursor: progress !important;
+                    user-select: none;
+                }
+            }
+
+            ul li.active a {
+                background-color: rgba(255, 255, 255, 0.2);
+                font-weight: 500;
+            }
+
+            ul li hr {
+                border: 0;
+                background-color: rgba(255, 255, 255, 0.1);
+                margin: 4px 0;
+                height: 1px;
+            }
+        }
+
+        &.project {
+            .dropdown {
+                right: auto;
+                left: 0;
+                top: 80%;
+            }
+        }
+    }
+
+    input[name=site] {
+        flex: 1 1;
+        display: block;
+
+        background-color: transparent;
+        border: 0;
+        margin: 10px 0;
+        padding: 10px 0;
+
+        font-size: 18px;
+        line-height: 1;
+        color: #fff;
+
+        box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+
+        &:focus {
+            background-color: rgba(255, 255, 255, .2);
+            padding: 10px 20px;
+            outline: none;
+            border-radius: 5px;
+        }
+    }
+
+    .apply {
+        position: relative;
+        align-self: center;
+        justify-self: center;
+
+        padding-left: 6px;
+
+        button {
+            cursor: pointer;
+            height: 42px;
+            background-color: #256397;
+            border-radius: 5px;
+
+            font-size: 14px;
+            font-weight: 500;
+            color: #fff;
+            line-height: 1;
+
+            padding: 0 15px;
+            border: 0;
+        }
+    }
+
+    &.alt {
+        input.text-input {
+            color: #fff;
+            font-size: 16px;
+
+            &::placeholder {
+                color: #ccc;
+            }
+        }
+    }
+
+    form > input.text-input {
+        width: 100%;
+    }
+}
+
+body.rtl section.website .select .dropdown {
+    right: 0;
+    left: auto;
+}
+
+section.title.tool-title {
+    background-color: #3f4e61;
+    padding: 25px 20px;
+
+    .flex {
+        display: flex;
+        align-items: center;
+
+        .icon {
+            margin-right: 18px;
+
+            img {
+                width: 32px;
+                height: 32px;
+            }
+        }
+
+        .name h1 {
+            color: #eee;
+            font-size: 18px;
+            margin-top: 2px;
+        }
+    }
+}
+
+section.tools {
+    padding: 50px 20px;
+
+    &.bottom-html {
+        padding-bottom: 10px;
+    }
+
+    &.top-html {
+        padding-top: 30px;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 17px;
+    }
+}
+
+.category {
+    padding: 0 0 20px;
+    margin: 0 0 20px;
+
+    &:last-of-type {
+        border-bottom: 0;
+    }
+
+    .title {
+        border-bottom: 1px solid #d9d9d9;
+        padding: 6px 0;
+        margin: 0 0 20px;
+
+        h2 {
+            font-size: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+    }
+
+    a.tool {
+        float: left;
+
+        width: 125px;
+        text-align: center;
+        min-height: 145px;
+
+        vertical-align: top;
+
+        position: relative;
+
+        .tool-loader {
+            display: none;
+
+            position: absolute;
+            top: 30%;
+            left: 50%;
+
+            width: 40px;
+            height: 40px;
+
+            margin: -20px 0 0 -20px;
+
+            background: rgba(0, 0, 0, .8);
+
+            border-radius: 500px;
+            -webkit-border-radius: 500px;
+            -moz-border-radius: 500px;
+
+            text-align: center;
+
+            img {
+                width: 16px;
+                height: 16px;
+                margin: 12px 0 0;
+            }
+        }
+
+        .tc {
+            width: 125px;
+            min-height: 125px;
+            vertical-align: top;
+
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+
+            transition: background-color 0.1s;
+
+            & > div {
+                padding: 15px;
+                display: inline-block;
+                vertical-align: middle;
+
+                span {
+                    display: block;
+                    color: #444;
+                    font-weight: 500;
+                    font-size: 13px;
+                    margin: 20px 0 0;
+                    padding: 0 2px;
+                }
+            }
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+            margin: 2px 0 0;
+        }
+
+        &:hover {
+            text-decoration: none;
+
+            .tc {
+                background-color: rgba(0, 0, 0, .05);
+            }
+        }
+
+        &.is-loading {
+            cursor: progress !important;
+            user-select: none;
+            -webkit-user-drag: none;
+
+            .tc {
+                background-color: rgba(0, 0, 0, .1);
+            }
+        }
+
+        &.locked {
+            filter: grayscale(100%) opacity(80%);
+
+            img {
+                filter: grayscale(100%) opacity(40%);
+            }
+        }
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: stretch;
+    }
+
+    .slot-468x60 {
+        text-align: center;
+        margin: 15px 0 0;
+
+        .slot-inner {
+            display: inline-block;
+            text-align: left;
+        }
+    }
+}
+
+body.rtl .category a.tool {
+    float: right;
+}
+
+.tool-content--bottom {
+    border-top: 1px solid #d9d9d9;
+    background-color: #f3f3f3;
+}
+
+.tool-content--top {
+    border-bottom: 1px solid #d9d9d9;
+    background-color: #f3f3f3;
+}
+
+.pre-scroll-container {
+    pre {
+        overflow: auto;
+        white-space: pre-wrap;
+    }
+}

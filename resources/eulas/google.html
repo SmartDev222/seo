@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=RobotoDraft:400">
+        <style type="text/css">
+            html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}
+
+            body {
+                background-color: #fff;
+                padding: 50px;
+                font-family: 'RobotoDraft', Arial, sans-serif;
+            }
+
+            h1 {
+                font-size: 17px;
+                color: #333;
+                margin: 25px 0 15px;
+            }
+
+            h1:first-of-type { margin-top: 0; }
+
+            p {
+                font-size: 15px;
+                color: #666;
+                line-height: 1.4;
+
+                margin: 10px 0;
+            }
+
+            .container {
+                max-width: 900px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Overview</h1>
+            <p>
+                SEO Studio comes bundled with a service that allows users to circumvent Google's rate limiting of web
+                scrapers. This document explains how the service works, what rights you have when enabling it, and the
+                terms under which you may activate it.
+            </p>
+            <p>
+                This service is not required to use this script, and is disabled by default. By activating the service,
+                you must fully understand the terms and conditions described below. If you disagree with the terms,
+                please do not activate the service.
+            </p>
+
+            <h1>Purpose</h1>
+            <p>
+                Some tools in this script perform automated searches on Google Search in order to retrieve essential data.
+                If these automated searches occur too frequently, Google will temporarily block the IP address of your
+                server. This is harmless, except it will break some tools for the duration of the block.
+            </p>
+            <p>
+                We created this service to fix that problem and keep tools working even when you are temporarily
+                blocked. The next section will explain how it works.
+            </p>
+
+            <h1>Functionality of the service</h1>
+            <p>
+                To ensure your tools continue working while blocked, this service establishes a network of servers that can
+                perform a Google search on your behalf while you are temporarily blocked. In exchange, you will also
+                make your own server available to occasionally perform searches for the network.
+            </p>
+            <p>
+                This is similar to using proxies, except you have access to a large collection of fast, high-quality
+                servers at all times, configured automatically for you by the service.
+            </p>
+            <p>
+                Please note that if we are unable to connect directly to your server over port 80 or 443, we will not
+                allow you to activate the service. Furthermore, if we are unable to connect to your server after the
+                service has been enabled and for an extended period of time, we may disable your access until your
+                server is again reachable.
+            </p>
+
+            <h1>Eligibility for the service</h1>
+            <p>
+                To be eligible for activation of this service, your application must be hosted on an open website;
+                that is, a website which our servers can connect to in order to perform search queries. If we are
+                unable to connect to your application over the Internet, you will not be able to activate the service.
+            </p>
+
+            <h1>Impacts on your server</h1>
+            <p>
+                The service will not expose the IP address or domain name of your website or server to other users. Instead,
+                the service will connect to your server on behalf of users, acting as a middle-man to conceal your identity.
+                The service will send no more than twenty requests per hour to your server, and no more than 480 requests
+                in total each day.
+            </p>
+            <p>
+                The service will regularly ping your server to a) ensure it is online and b) measure latency. During
+                these pings, we may also identify the country in which your server is hosted and record it. This will
+                allow the network to deliver more accurate results, by sending requests to servers near or in the
+                intended country.
+            </p>
+
+            <h1>Limits of your usage</h1>
+            <p>
+                The service will accept a limited number of requests from your server per day, for which it will execute
+                Google searches on your behalf. The daily limit is not fixed, and may change at any time depending on your
+                overall contributions to and usage of the service. You will be able to see your limit at any time through
+                this admin panel after enabling the service.
+            </p>
+            <p>
+                If this is your first time enabling the service, you will be granted an initial limit of 100 requests
+                per day. This will automatically be raised to 200 requests per day once we fully connect to your server,
+                and then will be raised to 500 requests per day once we perform our first web search with your server (
+                this normally happens within 24 hours). After hitting 500 requests per day, the limit may increase or
+                decrease regularly as described in the previous paragraph.
+            </p>
+            <p>
+                To conserve resources, the service will execute no more than one single request at any given time for your
+                application; any additional requests will be held until the current active request is completed.
+            </p>
+
+            <h1>Service guarantees</h1>
+            <p>
+                We are unable to guarantee the reliability, performance, uptime, or availability of this service. We are
+                also unable to guarantee the success of individual requests sent to the service.
+            </p>
+
+            <h1>Restrictions & abuse</h1>
+            <p>
+                Your usage of this service outside of SEO Studio is prohibited. If such activity is detected, your rights
+                to use the service may be permanently revoked. We reserve the right to reduce your daily request limit, or
+                temporarily or permanently suspend your right to use the service, at any time and for any reason.
+            </p>
+
+            <h1>Liability & disclaimers</h1>
+            <p>
+                If you are using this service in a commercial environment, it is of course your responsibility to ensure
+                you are compliant with local laws regarding commercial use of scraped data from publicly-available
+                sources. The service itself operates in the United States of America, where such activity is legal.
+            </p>
+
+            <h1>Free & paid access</h1>
+            <p>
+                Your access to this service is free with the requirement of a valid license of SEO Studio purchased from
+                Envato (codecanyon.net). You are entitled to a separate rate limit for each individual license. This
+                license, and subsequently your right to use this service for free, does not expire so long as the
+                service remains online.
+            </p>
+            <p>
+                We reserve the right to assess a fee, either once or recurring, for users who need a guaranteed or
+                adjusted rate limit, and/or for access to parallel processing techniques which may improve the speed
+                and reliability of the service for the user's application.
+            </p>
+
+            <h1>Outside participation</h1>
+            <p>
+                This service is not exclusive to SEO Studio, and your server(s) may perform web searches for applications
+                outside of the service. We may at times conduct sampled experiments with search results to improve our
+                scraping techniques; your server may be included in these experiments at random.
+            </p>
+
+            <h1>Recording & monitoring of data</h1>
+            <p>
+                Please understand that all requests sent to this network by your application are logged, and potentially
+                monitored by both humans and automated systems. We only collect data necessary for service to perform
+                its operations safely.
+            </p>
+
+            <h1>Collection & deletion of collected data</h1>
+            <p>
+                You may request a copy of all data the service has collected from your application, or the deletion
+                of all this data, by sending an email to google@baileyherbert.com. Please note that we only retain
+                records for a limited amount of time and may not be able to send a complete archive.
+            </p>
+
+            <h1>Changes to these terms</h1>
+            <p>
+                We will collect your email address at the time of activation. If these terms are ever changed, we will
+                attempt to notify you at that address of the changes.
+            </p>
+        </div>
+    </body>
+</html>

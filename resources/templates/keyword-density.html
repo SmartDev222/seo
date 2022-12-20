@@ -1,0 +1,71 @@
+<div class="form-container">
+    <h2>{{Test Another Page}}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="label">
+                <label class="gray">[[SITE]]</label>
+            </div>
+            <div class="input">
+                <input type="text" class="text-input" name="path" value="[[PATH]]" />
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{Test}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="table-container">
+    <h2>{{Meta}}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th width="120px">{{Name}}</th>
+                <th>{{Value}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            [[META]]
+        </tbody>
+    </table>
+</div>
+
+<div class="sticky" id="topKeywordsSticky">
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{Keyword}}</th>
+                        <th class="center" width="150px">{{Count}}</th>
+                        <th class="center" width="150px">{{In Title}}</th>
+                        <th class="center" width="150px">{{In Description}}</th>
+                        <th class="center" width="150px">{{Weight}}</th>
+                    </tr>
+                </thead>
+            </table>
+            <a class="up"></a>
+        </div>
+    </div>
+</div>
+
+<div class="table-container">
+    <h2>{{Top Keywords}}</h2>
+
+    <table data-sticky="topKeywordsSticky">
+        <thead>
+            <tr>
+                <th>{{Keyword}}</th>
+                <th class="center" width="150px">{{Count}}</th>
+                <th class="center" width="150px">{{In Title}}</th>
+                <th class="center" width="150px">{{In Description}}</th>
+                <th class="center" width="150px">{{Weight}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            [[ITEMS]]
+        </tbody>
+    </table>
+</div>

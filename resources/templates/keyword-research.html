@@ -1,0 +1,50 @@
+<div class="form-container">
+    <h2>{{ "Keyword Search" | rt }}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="input">
+                <input type="text" name="keyword" value="{{ keyword | e('html_attr') }}" />
+            </div>
+            <div class="input">
+                <select name="country" style="border: 1px solid #d0d0d0; border-radius: 3px; height: 28px; margin: 0px 10px 0 0px; padding: 0 0 0 5px; font: inherit; font-size: 13px;">
+                    {% for code, name in countries %}
+                        <option value="{{ code }}" {% if code == activeCountry %} selected {% endif %}>{{ name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{ "Test" | rt }}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+{% if show_tables %}
+<div class="table-container">
+    <h2>{{ "Results" | rt }}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{{ "Keyword" | rt }}</th>
+                <th class="center">{{ "CPC" | rt }}</th>
+                <th class="center">{{ "Volume" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for result in results %}
+                <tr>
+                    <td>{{ result.text }}</td>
+                    <td class="center">{{ result.cpc }}</td>
+                    <td class="center">{{ result.vol }}</td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">{{ "Nothing to show." | rt }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endif %}

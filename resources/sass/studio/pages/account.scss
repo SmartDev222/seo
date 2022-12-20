@@ -1,0 +1,133 @@
+// main: ../index.scss
+
+section.account {
+    padding: 40px 20px;
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .option {
+        background-color: rgba(255, 255, 255, 0.5);
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+        border-radius: 3px;
+
+        transition: background-color 0.2s, color 0.2s;
+
+        padding: 50px 25px;
+        margin: 0 0 25px;
+
+        text-align: center;
+        color: #666;
+
+        &:hover {
+            background-color: rgba(240, 240, 240, 0.5);
+            color: #444;
+        }
+    }
+
+    i {
+        font-size: 40px;
+        margin: 0 0 15px;
+    }
+
+    h3 {
+        margin: 0;
+        font-size: 20px;
+    }
+}
+
+section.websites {
+    padding: 50px 20px;
+
+    h3 {
+        font-size: 21px;
+        margin: 0 0 15px;
+    }
+
+    p {
+        font-size: 15px;
+        margin: -5px 0 20px;
+        color: #555;
+    }
+
+    form {
+        input.text-input {
+            border: 2px solid #cfcfcf;
+            height: 45px;
+            font-size: 15px;
+            color: #666;
+            -webkit-border-radius: 3px;
+            border-radius: 3px;
+            padding: 0 16px;
+            width: 100%;
+            display: block;
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            line-height: 40px;
+            background: #fff;
+            margin: 0 0 10px;
+
+            &:focus {
+                outline: none;
+                border-color: #66afe8;
+            }
+        }
+
+        input[type=submit] {
+            background-color: #3d8dc5;
+            border: 1px solid #3d8dc5;
+
+            height: 40px;
+            padding: 0 28px;
+
+            font: inherit;
+            font-size: 16px;
+            font-weight: 400;
+            color: #fff;
+
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+        }
+    }
+
+    .item {
+        cursor: pointer;
+        display: block;
+
+        font-size: 16px;
+        line-height: 40px;
+        padding: 0 15px;
+
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+        background-color: #f2f2f2;
+        color: #777;
+
+        border-bottom: 2px solid #cfcfcf;
+
+        &:last-of-type {
+            border-bottom: 0;
+        }
+
+        &:hover {
+            background-color: #e0e0e0;
+            text-decoration: none;
+        }
+    }
+
+    .list {
+        border: 2px solid #cfcfcf;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+    }
+}

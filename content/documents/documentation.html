@@ -1,0 +1,689 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-opaquegray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="806a0401-eaaf-4251-b01f-bc0e664b05c0" class="page sans"><header><h1 class="page-title">Documentation</h1></header><div class="page-body"><h2 id="5aa6d2a6-6ad5-459e-9c07-157d54defdd7" class="">Table of contents</h2><nav id="77ea3f2e-b07b-42f6-9131-07adfa77758b" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#5aa6d2a6-6ad5-459e-9c07-157d54defdd7">Table of contents</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#09fda5db-67b2-424a-8c35-bfe8f64e9b9e">About</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#230eb2f5-7902-447c-af61-7b1155892b13">Requirements</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#811543eb-44da-4f91-8418-a8cc5e675364">Installation</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#c2084a36-0c9d-4120-b7a0-7b7a4a537618">Common installation questions</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f8521963-dc7e-4258-a43b-86e89b2c1ccf">Common installation issues</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#46b60876-2257-4beb-b2eb-43f6dc3c314b">Support</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#afb46782-e722-4370-95c5-5670f2baa12d">Developers</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#9b9bf954-f651-410d-83ba-cc98c779166c">Tools</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3c544e16-38c1-42d3-8531-72fe593ae9fd">Google &amp; Bing SERP</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4112dad8-4b48-47cc-9626-19c01eb9634b">Top Search Queries</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e49120da-ce73-4050-b32e-158211738ab7">Indexed Pages</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#126cca88-a0ba-4261-970c-9b64cbe1a331">Robots.txt</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1c46fdf6-f9ce-4ebe-8869-fda6120f34bd">Sitemap</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5c32efbe-f071-4479-a432-00d64b5895dd">Submit Sitemaps</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1adecccd-d0cc-468b-bf59-a76779314fba">High Quality Backlinks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d5817b4d-f358-4b5c-aeda-2429efa7da20">New Backlinks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3bb3d1e8-13c9-4579-b086-4f209dff3809">Poor Backlinks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d9e80633-efda-47b9-8fec-0a054ec84d86">Top Referrers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9209fcda-4299-43b1-9151-9cda4e491da4">Check Domain Authority</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#981440c4-1af0-4310-8ede-b9e9cd295d3e">Check Page Authority</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#30dc2875-0cf6-486b-8c03-4f83dc56ea3c">Crawlability Test</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#22a35465-1578-44fc-9320-217f4d798850">Mobile Support Test</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5647e8e4-ecb8-4026-96bd-1857008b3fc2">Headers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#6dacbc8b-95ad-46e7-bbff-f4fb7937559c">Speed Test</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fca2f8d0-1ba6-4661-a964-e32d70b93a8e">Link Analysis</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#fe8b5d53-fc3c-4ee5-90f5-68539f285cbe">Keyword Density</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#64b359dd-a167-4433-89d8-6d198e537354">Extract Meta Tags</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#133ffa67-6da7-40b9-b987-534f6e2a8bb3">Keyword Research</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8ccb2b71-7f49-4fa4-be9f-d5fb04be7542">Competition</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#de766f30-1d6b-434c-b4f3-ff034425a723">Administration</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4d9532f7-9584-4762-89d8-aa179669ce66">Accessing the admin panel</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3e17916d-bcb6-4aee-85cd-ba0f1098d2eb">Configuring the script</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#eb433106-49c2-43b8-b413-d5232f30e37a">Configuring tool caching</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#938f26ea-02de-4e1c-9abc-1c36be95e237">Configuring outgoing mail</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#f94bcafb-ff84-4ac8-9b8b-3481ea93d1f7">Configuring email templates</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#16e9b191-6dfa-4085-85b3-aec1bf6e9867">Setting up permalinks</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a7bf949f-56a9-4238-b589-35e4c4d8821c">Changing the website’s appearance</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#d9226cb8-1a02-49ab-8a08-c8eb04f5f108">Changing the website’s content</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#686dc5f9-95ae-42a5-8cf3-2f770e991ec3">Translating the website</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#44a4f317-3cc8-44ad-8fd4-1db35beb5dee">Editing pages</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#8a2e410a-18d3-437f-ac78-2a59fb890818">Editing tools</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#665d5b2d-6c71-449b-8fd1-f04dc17c59ad">Embedding tools onto another website</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#22eda459-140e-4c09-b143-c636d79d7e2e">Inserting ad banners</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#e613ed7d-a328-4df2-abd6-0043b3299846">Managing cloud services</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#3cb1d77c-13f3-483a-ae83-e700b9079e42">Setting up the cron job</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b85dfea7-22d4-4b22-a7b7-bcaa807147da">Setting up Google proxying</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#cf88373b-5b5a-4e50-a881-2727fb22a601">Installing updates</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#f503283b-0ce6-4983-a8bf-e9de1334c770">Managing users &amp; groups</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#2f15f09a-a8bb-4265-8fa4-db129e74aee9">Managing users</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#9d8d5259-3fb9-49cc-8950-bcefc12a3775">Managing user groups</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#89f57056-e5ba-4f93-8a70-157661b9ce68">Monitoring tool usage</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7424f53d-f08a-4b48-84e9-58e4ef7efa16">Extensions</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7155fb0b-29e5-4227-9c7d-bc22394d9de9">Setting up a contact page</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#efa24b4c-ffde-441e-b679-522d3502d20c">Setting up subscription plans</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#89a1b474-8c76-4812-ae34-82cf6fc468bd">Managing user subscriptions</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8ad1411b-0114-4c30-8e01-6e8a42f85978">Debugging</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#4d82586c-4793-4cd1-a2f6-977d9c50c341">Viewing the error log</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#b9a6bc0c-3ecf-4b0f-92fb-843f7acd6108">Running diagnostic tests</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#c1e88c3e-563a-43ed-997c-2d7c1ab17d82">Activation</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#dd757c5a-1c6a-44c5-9fcb-f9adaba86b62">Activating the application</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#e5de1546-8483-4c32-87f8-7e0658283168">Deactivating or moving the license</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#a0ae5f4d-83f1-4c14-be3b-5f124dfdcb7e">Technical information</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#a435a070-5435-4c68-b9d6-c31b85eb7418">Telemetry &amp; data collection</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#9a717700-1b44-4e92-9255-cd05b3ae0ec7">Update backups</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#2c815c17-6d8f-4ac3-a6c1-118768d2c857">Recovering from failed updates</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#7c7cc1f8-6c71-4b8a-8608-d5e60f73d960">Disclaimers</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#7d4e5c18-3bc2-4e2e-ae92-1693db3adc5b">This script is a web scraper</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5b66bbd7-50d9-462b-8258-5cad50d7cad9">Data sources can go offline</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#134ac928-3f7d-45ee-b205-956ef4bc3290">Credits</a></div></nav><h1 id="09fda5db-67b2-424a-8c35-bfe8f64e9b9e" class="">About</h1><p id="35ddc41b-c943-40ed-8aa0-64d5b010fd1c" class="">Welcome to SEO Studio! This is a small script that contains specialized tools for search engine optimization. These tools make a great offering to your visitors and customers.</p><h2 id="230eb2f5-7902-447c-af61-7b1155892b13" class="">Requirements</h2><p id="a362dcfe-e873-4c44-9b72-36cbf0d740fe" class="">Before installing, please ensure that you have a web server which meets these requirements:</p><ul id="712c1caf-50d6-45f9-863e-e788b256b09e" class="bulleted-list"><li style="list-style-type:disc"><strong>PHP: </strong><code>7.4.0+</code> (recommended) or <code>5.6.1+</code> (minimum)</li></ul><ul id="d87ce6b9-7c52-47e0-a4a2-62622a94842e" class="bulleted-list"><li style="list-style-type:disc"><strong>PHP extensions: </strong><code>mysqli</code> &amp; <code>curl</code></li></ul><ul id="54eb0051-908a-4421-8a66-db974c34669f" class="bulleted-list"><li style="list-style-type:disc"><strong>MySQL: </strong><code>5.5+</code></li></ul><p id="e4e30d56-12ce-47e6-b1cd-2d70b2fe4d88" class="">You will also need an empty MySQL database to install the script into. Please do not use a database that is shared with another platform at the same time. Please ensure it is indeed empty before installing.</p><p id="6ebb5c38-ab45-45ac-8242-6e85070fe7c6" class="">Please note<strong> </strong>that if you install the script in an environment with a PHP version older than <code>7.4</code>, your installation may stop receiving automatic updates in the next few years until you upgrade to <code>7.4</code> or newer.</p><h2 id="811543eb-44da-4f91-8418-a8cc5e675364" class="">Installation</h2><p id="ccecbcb9-5f8f-4d69-bd2c-6bc63fbb6161" class="">Installation is very simple!</p><p id="0dc36c16-768e-4b00-b2ed-5ab12858bcb0" class="">Inside the download from <a href="https://codecanyon.net/downloads">codecanyon.net</a>, there is a folder called <code>Upload These Files</code>. Open
+this folder and look for the <code>install.php</code> file. Upload this file to your website and open it in your browser. Then follow the on-screen instructions to complete the installation.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="34755eee-8cd6-4537-958d-69c18c1f24c9"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">When you finish installing the script, all of the tools should work out of the box without further configuration. However, you’re not done. Make sure to visit the <strong>quick start</strong> wizard in the script’s admin panel to finish setting up the script after installation.</div></figure><h3 id="c2084a36-0c9d-4120-b7a0-7b7a4a537618" class="">Common installation questions</h3><ul id="84c2cf20-8b18-4e0b-b91c-a8a31b2b250c" class="toggle"><li><details open=""><summary><strong>How do I upload the file?</strong></summary><p id="a9d8e556-47aa-47c8-a8cb-c7d34c661dbd" class="">You’ll want to use a file manager to upload the file. This can be done with a software application such as <strong>FTP </strong>or <strong>SFTP</strong>. It can also be done with some web hosting control panels, such as <strong>cPanel</strong> with their file manager interface.</p><p id="2e331606-9bfe-425d-96f7-810ef7c983bb" class="">Because the process for this will vary depending on your web hosting company, if you’re not sure how to upload the file, please contact your web host’s support team and ask them how you can upload a PHP file.</p></details></li></ul><ul id="1d90d3da-404d-48ae-b85c-fbd5ec58d33e" class="toggle"><li><details open=""><summary><strong>What folder do I upload the file into?</strong></summary><p id="55bb3219-1a61-4467-95cb-3c124a15ad51" class="">The answer to this depends on the setup of your server. In most cases, you will want to upload it into a folder called <code>public_html</code> which you will often see as soon as you open the file manager. Some file managers will even start inside this folder by default.</p><p id="9b0729c6-8b41-40e0-b071-04aa571224ab" class="">If you’re setting up the server manually, it will depend on the web server package and your server distribution, but these files typically go inside <code>/var/www/html</code>.</p><p id="86111d04-f583-4087-92a4-59778ade4ce8" class="">You will want to upload the <code>install.php</code> file so that it resides inside the target folder. This means the resulting path should look something like this:</p><ul id="783e191c-49ad-4cac-b18a-d1138a50bb0d" class="bulleted-list"><li style="list-style-type:disc"><code>/home/username/public_html/install.php</code></li></ul><ul id="bfceaf23-f81d-4b0b-98fe-ad11855f57e0" class="bulleted-list"><li style="list-style-type:disc"><code>/var/www/html/install.php</code></li></ul><p id="083c78bd-2887-4064-88f9-793ef754701b" class="">If you’re not sure which folder corresponds to your website’s home page, ask your web host. </p></details></li></ul><ul id="471365f9-4984-4794-b4e1-ae0c3f7c4d47" class="toggle"><li><details open=""><summary><strong>Can I install into a subdirectory or subdomain?</strong></summary><p id="39b6e99b-06d9-4a84-916c-204d1640cd41" class="">Yes, this script will work inside subdirectories and subdomains. You’ll simply need to upload the <code>install.php</code> file inside the directory for the subdirectory or subdomain and then proceed as normal.</p><p id="27fc355f-5aac-4b90-adc2-9200fb6fcafa" class="">If you’re not sure how to create a subdirectory or a subdomain, contact your web host.</p></details></li></ul><ul id="57f5b714-7df2-4cd4-9609-5e0d205277c4" class="toggle"><li><details open=""><summary><strong>How do I open the file in my browser?</strong></summary><p id="dfa2fa22-b6e6-4b2d-8c31-caa034d458c0" class="">Assuming you uploaded it into the correct folder, you can then access it in your browser by manually typing the URL to your website and adding <code>/install.php</code> to the path.</p><p id="3b6f2401-a3b6-4a13-8b5b-b1d7efa29ac9" class="">For example: <code>https://example.com/install.php</code></p><p id="ba9db071-c1b1-4df3-bc2f-6c8df699eda6" class="">In some cases, if your website is empty other than the <code>install.php</code> script, you can also open the home page of your website and you will see an index where the installer file is listed. Simply click on it to proceed.</p></details></li></ul><ul id="9cb3fe82-8cfe-48b4-9ae6-a6c006f81fec" class="toggle"><li><details open=""><summary><strong>How do I create a database for the installation?</strong></summary><p id="b986b2ec-1e7a-4b38-9899-d9c13da9e1d6" class="">This process varies greatly by web host, control panel, and the configuration of your server, so I recommend contacting your web host if you’re not sure.</p><p id="8c77dba0-d9eb-4bf2-bbc4-ab9f410ea750" class="">Most likely, your web host will have some online documentation showing you how to create a MySQL database. You will need to create a MySQL user, attach it to the database, and grant it all permissions for that database.</p></details></li></ul><ul id="20dd916e-5c0a-4340-83c4-963b9506185a" class="toggle"><li><details open=""><summary><strong>What do I enter for the database options?</strong></summary><p id="23a26e18-8914-44b0-95a1-e626828e6180" class="">The <strong>hostname</strong> is almost always <a href="http://localhost"><code>localhost</code></a> unless your web host has told you otherwise.</p><p id="b61381a5-4763-4f03-98ae-994f59b6dfe2" class="">You will create or receive the other parameters (database name, username, password) when you create the database. If unsure, ask your web host.</p><p id="4acdf4aa-0322-4174-9cde-d60d8a4ff96f" class="">If your database server is running on a port different than <code>3306</code>, then you should specify it as part of the hostname using a colon, for example: <code>localhost:3307</code></p></details></li></ul><ul id="738137e5-b832-4d88-9170-391214f26e4c" class="toggle"><li><details open=""><summary><strong>Do I need to activate the product?</strong></summary><p id="f172febc-f633-435f-b82c-f00c02934f85" class="">The installer will ask you to sign in with your Envato account. This will activate the product automatically.</p><p id="c8befc96-1deb-46fb-a420-d92037e5f0cd" class="">Product activation does not unlock any features. It only grants access to automatic updates, free search proxying, and one-click cron job setup.</p><p id="867645dd-3d77-45a1-93db-80c886e10a44" class="">You can skip this step if you’d like — click the green sign-in button and then click on the deny button to proceed with the installation.</p><p id="1a997f45-4c2e-4eb7-8436-84eea8354508" class="">You can also activate after installation if desired. You’ll see prompts throughout the admin panel allowing you to activate easily at any time.</p></details></li></ul><ul id="1bf2e43d-48f4-48e0-9487-fcee10549484" class="toggle"><li><details open=""><summary><strong>Do I need to configure file permissions on the server?</strong></summary><p id="7cb91ac6-e990-48e2-abac-98a93cecb03a" class="">No. The installer will configure file permissions on its own. Please do not modify file permissions after installation unless you know what you’re doing, as that may break automatic updates.</p></details></li></ul><ul id="c53b3fa1-efd5-43eb-996b-6ca084df2d9d" class="toggle"><li><details open=""><summary><strong>How do I install script updates?</strong></summary><p id="a5e7a7fa-ceab-455e-8939-c2e5eb48b4de" class="">You should never attempt to install an update on your own. Instead, log into the admin panel for your script, go to the <strong>updates </strong>page, and check for updates there. If updates are available, click the <strong>install </strong>button and they will be installed for you.</p><p id="d3480161-a0e6-4fc8-bc53-61576132278c" class="">You might periodically receive update notifications from CodeCanyon. You should still use the admin panel’s update system to install the update, rather than downloading it from CodeCanyon.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="afec231d-10b3-4626-ba68-ea4679d007f7"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Tip: </strong>If you’ve received an update notification, but your admin panel shows that no updates are available, don’t panic! This just means the update was <em>automatically installed</em> by your script because you have automatic updates enabled in the settings.</div></figure></details></li></ul><h3 id="f8521963-dc7e-4258-a43b-86e89b2c1ccf" class="">Common installation issues</h3><ul id="9686c072-5cb2-42da-90a4-51d7407ad6ef" class="toggle"><li><details open=""><summary><strong>The installer says it encountered an unexpected error, is it safe to proceed?</strong></summary><p id="1a336387-11b8-4dbb-8aa1-9684a3b6255e" class="">No, it is <strong>not safe</strong> to proceed. This often means something is so drastically wrong with the server that the installer died while it was checking if the requirements were met.</p><p id="fc5f885f-0be3-4646-9c60-d3cc98cf6c6f" class="">Please contact support and send me the URL to your installer: <a href="https://codecanyon.net/user/baileyherbert">https://codecanyon.net/user/baileyherbert</a> </p><p id="3123d2c1-11d4-400f-aa5c-fb97911ce25b" class="">If you’re experienced with web development, you can open your developer console to the <em>network </em>tab and check the response in the failed request for more information on what’s wrong. If you believe it’s safe to ignore, then you can proceed, or contact me if unsure.</p></details></li></ul><ul id="9f578e5f-40c5-48f4-a5b8-a9c43f464489" class="toggle"><li><details open=""><summary><strong>I’m receiving an error on the database step.</strong></summary><p id="7c155267-c0b0-4e37-8194-ee63dd41e30c" class="">If you’re seeing an <strong>access denied</strong> error, check if it says “using password: yes”. If it does say “yes”, then the password you entered is incorrect. If it says “no” or is missing, then the username or database name is incorrect.</p><p id="3d7a82b9-8f62-4e56-9d34-8dae59b61831" class="">Make sure that you’ve attached the username to the database. This is something you typically have to do manually. After attaching them, you will be asked to select permissions. Grant the user all permissions for the database, and then try again.</p><p id="4820b056-9b3c-451f-a6ae-9b73a2456b9c" class="">If you’re seeing a connection error, double check the hostname and try again. If it still fails, contact your web host and send them the error message as well as a screenshot of the database credentials you’re entering into the script. </p></details></li></ul><ul id="01d9a873-028b-45c1-a8e4-cdf1f45871d9" class="toggle"><li><details open=""><summary><strong>I’m having trouble verifying my license.</strong></summary><p id="233336b5-c4e8-4c42-823e-93cb54b7ba13" class="">If you see an option to skip the activation step, click it. You’ll be able to activate the product later from the admin panel, so don’t worry about it too much.</p><p id="be8cbf0b-2aa3-48b2-8857-a43fa719f137" class="">If you don’t see an option to skip, please contact support: <a href="https://codecanyon.net/user/baileyherbert">https://codecanyon.net/user/baileyherbert</a> </p></details></li></ul><ul id="4c06bf1e-f090-4769-ba03-95aad9d9165b" class="toggle"><li><details open=""><summary><strong>The installer appears to be stuck at the “installing” step?</strong></summary><p id="c036d7c5-b3ca-4922-911f-6072aab6123f" class="">Please don’t worry, the installer is almost certainly not frozen. </p><p id="aa983d75-f9ad-4d3b-be98-8fccc08102e5" class="">I distribute small updates for this script “over the air” and only submit major updates to CodeCanyon. </p><p id="52ef2061-2190-4b9f-8275-87e90e69e60d" class="">Most likely, the installer is currently installing a large number of small updates for your script, which can take 2-3 minutes depending on the number of updates and the server’s internet speed. </p><p id="46854fe5-277a-4473-bae0-e8d17dbf6c0b" class="">Please allow up to 15 minutes for the installation to finish. Do not close the page until it has completed.</p></details></li></ul><ul id="9f92b2b0-828f-4558-8727-bb996d956c97" class="toggle"><li><details open=""><summary><strong>I’m receiving an error when activating the free Google proxying or Instant Cron?</strong></summary><p id="e844f325-de59-4079-a233-21f1fbe4d5de" class="">In most cases, these errors are caused when a security plugin on your server, or an intermediary like Cloudflare, blocks my server from connecting to your server because it looks like a robot.</p><p id="7780d894-94b3-4f7c-bb5b-147b40255d6d" class="">Check with your security plugin, intermediary, or web host to see if there’s a way to exclude blocking requests from my user agent:</p><blockquote id="d7474d8c-51e0-465d-ac6a-38f276c5dbcb" class=""><em>Mozilla/5.0 (compatible; Baileybot; +https://bailey.sh)</em></blockquote></details></li></ul><h2 id="46b60876-2257-4beb-b2eb-43f6dc3c314b" class="">Support</h2><p id="75c0d258-4a58-455a-8985-92af902d3f65" class="">If you’re having trouble with the installation, or need help with anything else, please visit my profile at the following link and send me a message using the contact form on the right side:</p><p id="bf3c3d9e-15a5-47de-a9c4-41b2f193a123" class=""><a href="https://codecanyon.net/user/baileyherbert">https://codecanyon.net/user/baileyherbert</a> </p><h2 id="afb46782-e722-4370-95c5-5670f2baa12d" class="">Developers</h2><p id="4c3057d9-4593-4ac8-bb4b-cc09136a2df2" class="">If you’re a developer, please do not use the <code>Source</code> folder included in the product download. This folder exists for reference only and is not suitable for installation. </p><p id="67638d4f-e1d4-4b17-a3ad-94f4571ea91c" class="">Instead, please the <code>install.php</code> file on your local web server and run it in your browser to install the application in the same directory. Then, you can delete the installer files and commit the remaining files if desired. Follow the above installation instructions if needed.</p><ul id="569aedbe-4161-45e4-a610-515c265bc699" class="toggle"><li><details open=""><summary><strong>Should I activate the product on a local installation?</strong></summary><p id="bec0398e-3a53-42e3-9d42-bb6cd1a403d9" class="">If you would like to be able to easily install updates into the locally-installed script later, then yes, you should activate it locally. If you don’t need updates, you don’t need to activate it.</p><p id="4b144a6f-aa61-4859-a38d-8a6b2ddef46e" class="">You will still need to attempt the activation step, but you can either deny the permission on the Envato side, or click the cancel button if presented with the license management screen.</p><p id="812aeb82-c6f7-40aa-a517-09b003e3c084" class="">If necessary, you may contact me via the support link above and I can register an additional license under your account so that you may activate both the production and development versions of your website at once.</p></details></li></ul><ul id="ac8d6696-fe76-4304-9685-163e754c5b91" class="toggle"><li><details open=""><summary><strong>Why is the installer encrypted?</strong></summary><p id="4280dc0f-4b8f-45fa-9475-ad26e5aeb5ce" class="">This is a common question, so I’ll put this here. The installer is <em>not encrypted</em>. It’s simply packaged into a bundle for ease of upload, and compressed as well as encoded to avoid corruption during file transfers in ASCII modes.</p><p id="d48409b6-2075-472c-a31c-7259fc1d5947" class="">The bundle can be unpacked (expanded) with my command line tool here: <a href="https://github.com/baileyherbert/packr">https://github.com/baileyherbert/packr</a> </p><p id="3a15c361-2f26-4194-971d-2e72c2e4a621" class="">For example, you can run the <code>packr expand install.php installer</code> command in the same working directory to extract all of its files into the <code>installer</code> folder.</p><p id="c192294f-cb0c-42b3-914a-0a8f75f21959" class="">You can also read any of the encoded strings by decoding them (base64) and then inflating them (gzip). Some of the data is binary, such as the archive for the application’s files.</p></details></li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="55037e84-12ce-4de9-897c-e2a4c1814699"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><strong>Attention all developers! </strong>Please make sure to disable the “<em>send errors to the developer</em>” option in the script if you intend to customize the code.</div></figure><h1 id="9b9bf954-f651-410d-83ba-cc98c779166c" class="">Tools</h1><h2 id="3c544e16-38c1-42d3-8531-72fe593ae9fd" class="">Google &amp; Bing SERP</h2><p id="f0100bb9-9c55-494a-8200-7ae1bbedf6cd" class="">These tools will test a provided keyword against your website in order to find your rank on the search results page. They will check up to <code>100</code> results depending on the query and position of your target website. The number of results may increase in the future.</p><h2 id="4112dad8-4b48-47cc-9626-19c01eb9634b" class="">Top Search Queries</h2><p id="b90ecd6e-5935-46cb-8a07-e91cb7faa049" class="">This tool uses <a href="http://spyfu.com">spyfu.com</a> to find a website’s most popular search queries in a small number of popular regions around the world. The following columns are displayed:</p><ul id="5bd6326d-032e-40e6-bbec-04d841437e34" class="bulleted-list"><li style="list-style-type:disc"><strong>Rank </strong>– The average rank of the website in search results for the query.</li></ul><ul id="cf73addf-d974-4d7c-a566-d501f4cfea40" class="bulleted-list"><li style="list-style-type:disc"><strong>Volume </strong>– The average monthly search volume for that query in the region.</li></ul><ul id="4d6e29e5-f24b-49b6-8910-ab6c99069c90" class="bulleted-list"><li style="list-style-type:disc"><strong>CPC </strong>– The broad cost-per-click for advertising that query in the region if available. If no data is displayed in this column, then the keyword is not advertised enough in that region, or Google AdWords did not provide data for it during the last index.</li></ul><ul id="57c7f3df-7526-4954-8674-14f2dce042d2" class="bulleted-list"><li style="list-style-type:disc"><strong>Difficulty </strong>– An estimation of how difficult it is to rank for this keyword, on a scale from 0 to 100.</li></ul><ul id="6f2f3162-c0f8-4203-a3b3-b960a2f10ab6" class="bulleted-list"><li style="list-style-type:disc"><strong>Clicks </strong>– An estimation of how many clicks your website receives from this keyword.</li></ul><ul id="5eeb9c11-ddb1-4243-91be-715331ffa7dd" class="bulleted-list"><li style="list-style-type:disc"><strong>Homepages</strong> – The average number of top results for this keyword that point to a home page.</li></ul><h2 id="e49120da-ce73-4050-b32e-158211738ab7" class="">Indexed Pages</h2><p id="3d1107cb-3b57-4f2d-b3b0-117f1a21d9e0" class="">This tool checks both Google &amp; Bing to determine the number of indexed pages.</p><h2 id="126cca88-a0ba-4261-970c-9b64cbe1a331" class="">Robots.txt</h2><p id="5b25ec6c-3d91-4ded-b009-86054f746cc4" class="">This tool parses and displays the rules in your <code>robots.txt</code> file, organized into a table. It also displays any sitemaps from the <code>robots.txt</code> file, followed by the raw text.</p><h2 id="1c46fdf6-f9ce-4ebe-8869-fda6120f34bd" class="">Sitemap</h2><p id="e026cda5-dc74-4ea9-a2ff-e4584fb41954" class="">This tool looks for sitemaps on a domain like a web crawler would, and shows the following information for each:</p><ul id="9c23fb05-6828-405f-8ca8-47f908f730df" class="bulleted-list"><li style="list-style-type:disc"><strong>Status </strong>– The HTTP status code for the sitemap.</li></ul><ul id="9f5c4ba1-e0c0-466c-b2fe-8f608f7170d4" class="bulleted-list"><li style="list-style-type:disc"><strong>Type </strong>– The format of the sitemap.</li></ul><ul id="23aaa63b-7853-463c-9f79-445b32e9ea60" class="bulleted-list"><li style="list-style-type:disc"><strong>Entries </strong>– The number of location entries inside the sitemap.</li></ul><ul id="f04225db-c090-4d5f-a3c9-2fa9c0fe8cfc" class="bulleted-list"><li style="list-style-type:disc"><strong>Visibility </strong>– A rating for how easy it was to discover the sitemap. For example, a score of 100% shows that the sitemap was immediately discovered upon crawling, while a score of 70% means that it took a considerable number of HTTP requests to discover the sitemap.</li></ul><p id="94e516a8-2108-4af7-982e-6647b0a55a9f" class="">This tool is capable of reading sitemaps in the <code>XML</code> or <code>RSS</code> format. It will discover sitemaps from the <code>robots.txt</code> file, and will attempt to load the root <code>sitemap.xml</code> file. It will also follow a single layer of nested sitemaps from inside the <code>sitemap.xml</code> file.</p><h2 id="5c32efbe-f071-4479-a432-00d64b5895dd" class="">Submit Sitemaps</h2><p id="70c855be-93bb-45df-814d-7e736fe9a354" class="">This tool can be used to easily submit a root sitemap to Google and Bing. It is recommended to instead use the Webmaster Tools for the respective services if possible, as those requests are likely prioritized and their statuses can be tracked.</p><h2 id="1adecccd-d0cc-468b-bf59-a76779314fba" class="">High Quality Backlinks</h2><p id="5867c027-17f8-4fbc-b1d9-6ec974d45611" class="">This tool shows up to <code>250</code> backlinks for the target website. For a backlink to show on this page, it must have a page authority score of at least <code>20</code> and a domain authority score of at least <code>50</code>.</p><h2 id="d5817b4d-f358-4b5c-aeda-2429efa7da20" class="">New Backlinks</h2><p id="1d7e4871-9753-4827-921d-d6713c924cd9" class="">This tool shows up to <code>250</code> backlinks that were discovered in the last two months for the target website, sorted by newest first.</p><h2 id="3bb3d1e8-13c9-4579-b086-4f209dff3809" class="">Poor Backlinks</h2><p id="154e2b19-c88f-40ad-a682-b589d6932b75" class="">This tool checks the last <code>500</code> backlinks to be discovered for the target website to see if they are low quality, risky, or spammy. For a backlink to show on this page, it must have a page authority score below <code>7</code> and must not be marked as <code>nofollow</code>. These rules might change in the future.</p><h2 id="d9e80633-efda-47b9-8fec-0a054ec84d86" class="">Top Referrers</h2><p id="a4f2fa08-e98f-4aea-bc7a-747d23d2bdd9" class="">This tool shows the top <code>100</code> domain names which link to your website, sorted by the number of backlinks. It also shows the number of <code>dofollow</code> links, the domain’s authority score, and the date at which the first backlink was discovered.</p><h2 id="9209fcda-4299-43b1-9151-9cda4e491da4" class="">Check Domain Authority</h2><p id="d3d2dfc6-688e-4c69-81c0-76909da62ddb" class="">This tool estimates the authority of a domain name. </p><p id="66fa429d-de14-4eab-be9c-741adfdfe392" class="">This is a score which estimates the link’s popularity and importance, and is determined by the number and quality of incoming links to the page (both internal and external). It’s calculated logarithmically on a scale from 0 to 100 and is updated for all domains at least once per month.</p><h2 id="981440c4-1af0-4310-8ede-b9e9cd295d3e" class="">Check Page Authority</h2><p id="9e75f511-d710-4f50-8978-12a658b43ccc" class="">This tool estimates the authority of a specific page on a domain name. The scoring works just like described in the tool above.</p><h2 id="30dc2875-0cf6-486b-8c03-4f83dc56ea3c" class="">Crawlability Test</h2><p id="6221543d-a8b5-4f4a-9a74-2ab1b1076e80" class="">This tool allows you to test specific pages on your website to see if they can be crawled and indexed by the various search engines. It looks at rules defined in meta tags and the website’s <code>robots.txt</code> file.</p><h2 id="22a35465-1578-44fc-9320-217f4d798850" class="">Mobile Support Test</h2><p id="918edc86-d291-46dd-98c1-81a592b48027" class="">This tool checks a website’s source code to detect whether or not it will be considered responsive or <em>mobile friendly </em>by a search engine. It checks meta tags, stylesheets, and embedded styles. Please note that this is a <em>best guess</em> tool, and may not always be fully accurate.</p><h2 id="5647e8e4-ecb8-4026-96bd-1857008b3fc2" class="">Headers</h2><p id="a9aba3a1-64c5-4f1b-a498-08256a8dcfb7" class="">This tool shows the headers of a specific page on your website. It also checks for redirection and explains whether the redirection is permanent or temporary.</p><h2 id="6dacbc8b-95ad-46e7-bbff-f4fb7937559c" class="">Speed Test</h2><p id="2864fee9-7521-40a8-bde3-49f646d7e8af" class="">This tool uses <a href="http://pingdom.com">pingdom.com</a> to test the performance of a website at one of a selection of regions across the world. </p><p id="fc6ead12-74a7-4198-b8d9-1261b555f7ed" class="">The results of the test will be displayed, including the overall load time, a score of the website’s performance, the total size of the page as transmitted over the network, and the number of HTTP requests it took to load.</p><p id="7a91f312-0de7-4ea1-9bea-a286ceb045da" class="">The response codes for the various content will also be displayed. In general, you will want to avoid redirections (<code>301</code> and <code>302</code>) and any erroneous requests in the <code>400</code>s or <code>500</code>s.</p><p id="d812c2e4-b518-4138-9bbd-c3c33a6eb480" class="">Finally, it will show a breakdown of the types of content which make up the page’s size and request count.</p><h2 id="fca2f8d0-1ba6-4661-a964-e32d70b93a8e" class="">Link Analysis</h2><p id="4ed07e41-acb4-4830-a5a3-4190305f1534" class="">This tool analyzes and shows a breakdown of the links on a webpage. You will see the anchor text, link location, the type (external or internal) and whether it or not search engines can follow it.</p><h2 id="fe8b5d53-fc3c-4ee5-90f5-68539f285cbe" class="">Keyword Density</h2><p id="e2f23ad1-81d2-49c1-a7cb-379ef5aeb668" class="">This tool analyzes a webpage and shows a breakdown of the density of its keywords. It will analyze the page’s title, meta tags, and body content. </p><p id="5b2dd9bf-1fdd-426a-af6b-6b303b8f3b2a" class="">Each phrase will show the number of occurrences on that page, whether or not the phrase is in the title and description, as well as a computed <strong>weight </strong>score for the phrase.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="7bfcd376-b2fa-44ca-840f-a637f5fa8a04"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">The keywords on a page with the <strong>highest weights</strong> will likely be indexed with more strength than other keywords. The actual percentages are meaningless except in comparison to other keywords — whether the top keyword’s weight is 2% or 20% makes no difference.</div></figure><h2 id="64b359dd-a167-4433-89d8-6d198e537354" class="">Extract Meta Tags</h2><p id="08c3eef0-0463-4d34-8460-d9fcbf5edd4b" class="">This tool analyzes a webpage and shows its meta tags. It also indicates whether each tag is used by Google and Bing.</p><h2 id="133ffa67-6da7-40b9-b987-534f6e2a8bb3" class="">Keyword Research</h2><p id="45fe4f13-7599-4408-b646-4c2b6e409527" class="">This tool finds keyword suggestions based on your input keyword and region using a combination of Google Suggest and Surfer SEO. It shows the cost-per-click and search volume in the specified region for each keyword.</p><h2 id="8ccb2b71-7f49-4fa4-be9f-d5fb04be7542" class="">Competition</h2><p id="363c2173-bbac-4982-bb81-9b618a28e985" class="">This tool performs a Google search with the specified query and checks up to <code>200</code> results for the rank of your website. It will then show your website with the surrounding results, and will show a comparison of backlink and authority data for those results.</p><h1 id="de766f30-1d6b-434c-b4f3-ff034425a723" class="">Administration</h1><h2 id="4d9532f7-9584-4762-89d8-aa179669ce66" class="">Accessing the admin panel</h2><p id="8e74a31a-ff9c-431b-aa33-44836ec9a7b8" class="">To access the admin panel you must sign into the public website as an account with admin privileges. Then a dark gray bar will appear at the top of the screen with a link to the admin panel.</p><h2 id="3e17916d-bcb6-4aee-85cd-ba0f1098d2eb" class="">Configuring the script</h2><p id="6de5ea95-312e-4058-b797-d10486ab02f0" class="">The <strong>Settings </strong>page in the admin panel has various subsections which allow you to change the configuration of the website. Each ambiguous item will have an encircled question mark (?) which you can hover with your mouse to learn more about.</p><h3 id="eb433106-49c2-43b8-b413-d5232f30e37a" class="">Configuring tool caching</h3><p id="20aa0596-8aa8-4268-9555-9a4ac51b0a99" class="">The <strong>Settings &gt; Cache </strong>subsection allows you to configure tool caching. Most data-driven tools cache their results into the database, while site-driven tools like Keyword Density will avoid caching their results at all.</p><p id="32f43f0e-d3b4-403e-9643-ad0aa4a99ec9" class="">You can configure the duration to store cached results on this page in <em>days,</em> or disable caching completely. When configuring a number of days, it will only apply to tools that need caching (data-driven tools).</p><p id="e6e078f7-bb2f-4d90-8970-0fe972e9c42d" class="">Running the script with a cache is recommended. If desired, set the cache to 1 day to maintain freshness. Also make sure the cron job is running as it will clean the cache periodically.</p><h3 id="938f26ea-02de-4e1c-9abc-1c36be95e237" class="">Configuring outgoing mail</h3><p id="d263c06c-3916-462b-ad08-c52d119e8a8e" class="">The <strong>Settings &gt; Mail </strong>subsection configures the outgoing mail server settings. If you’re on a server that supports sending email, such as a cPanel server, the default <code>Built-in PHP mail()</code> option should work for you. Try the “send a test email” feature and check your spam inbox just in case.</p><p id="6f3c295f-4b45-4d0b-ab97-4139e115dc3c" class="">For servers that do not support email, or for advanced users, you can configure a mail service from the available options: SMTP, Mailgun, and SendGrid.</p><p id="40614871-5b48-4e97-a91d-1750ad412e68" class="">You will also see the following options:</p><ul id="8169ac3e-7366-41c9-97a6-0f51165363d8" class="bulleted-list"><li style="list-style-type:disc"><strong>From Address </strong>– The email address that emails will be sent from. If you’re using a service like SMTP, MailGun, or SendGrid, make sure this matches the username or sender email on the account to avoid the spam folder.</li></ul><ul id="a0a26a00-7a54-4987-a817-b96769eb7a68" class="bulleted-list"><li style="list-style-type:disc"><strong>From Name </strong>– The display name for the sender. This can be set to anything, like the name of your brand or website.</li></ul><h3 id="f94bcafb-ff84-4ac8-9b8b-3481ea93d1f7" class="">Configuring email templates</h3><p id="52900ed3-d0ac-4232-b170-0b201f53cf9c" class="">The <strong>Settings &gt; Email templates </strong>subsection allows you to customize the plain-text email templates that the script uses when sending various messages to users.</p><h3 id="16e9b191-6dfa-4085-85b3-aec1bf6e9867" class="">Setting up permalinks</h3><p id="ccd9adc1-f23f-41d2-bed2-5d75cf83dc4a" class="">The <strong>Settings &gt; Permalinks </strong>subsection allows you to enable permalinks (pretty URLs) on the public website <em>on supported servers</em>. To enable it, the script will first perform an eligibility check where it tests a temporary directory on the server to make sure permalinks won’t cause any fatal errors.</p><p id="a05607aa-2222-4524-94f6-a5572ba92e82" class="">Once enabled, you can customize the permalink paths across the script. </p><p id="5da963d6-9c13-46d3-a806-e066d992607a" class="">Please note that the permalinks will be written directly to the <code>.htaccess</code> file in the root directory of the script. If something goes wrong and the website starts displaying an error after changing permalinks, try renaming this file to <code>.htaccess.old</code> to access the website again.</p><h2 id="a7bf949f-56a9-4238-b589-35e4c4d8821c" class="">Changing the website’s appearance</h2><p id="50766a28-a915-43a3-8039-2e54aa385c56" class="">The admin panel has a <strong>Customize </strong>section in the sidebar which is dedicated to changing the appearance of the website. You will find three subsections under this section:</p><ul id="72a96e6b-060e-449a-ae4a-09b57b13e00f" class="bulleted-list"><li style="list-style-type:disc"><strong>Branding </strong>– Configure the logo and favicon for the public website.</li></ul><ul id="9bffe6c3-fae1-4afc-bbcc-6c0fdc626092" class="bulleted-list"><li style="list-style-type:disc"><strong>Navigation </strong>– Add custom navigation links to the header.</li></ul><ul id="f3bc84a7-48db-42b9-97cd-ed0942f6b81f" class="bulleted-list"><li style="list-style-type:disc"><strong>Colors </strong>– Customize the color scheme of the website to match your branding.</li></ul><p id="729bad38-95fd-4451-9647-11cda0b3472b" class="">For now, this is as much as we can customize the appearance. There are additional customization features planned for the future, but no immediate guarantees.</p><h2 id="d9226cb8-1a02-49ab-8a08-c8eb04f5f108" class="">Changing the website’s content</h2><p id="d3e3ccf7-3359-435c-9f9c-bc556f02d025" class="">The admin panel has a <strong>content </strong>section in the sidebar which is dedicated to changing the content of the website, such as the text, tools, and advertising banners.</p><h3 id="686dc5f9-95ae-42a5-8cf3-2f770e991ec3" class="">Translating the website</h3><p id="453ce199-fc48-4b1c-b76d-b3893d8eaeaf" class="">The <strong>Content &gt; Languages </strong>subsection allows you to create and manage languages for the website. When multiple languages exist at the same time, a language selector bar will automatically appear at the top of the website. You can edit or set a language as the default by clicking the ••• button.</p><p id="3ac12b3a-4485-4bb1-aa16-c0856e01c700" class="">To create a new language, click the <em>Create new</em> button at the top right of the page. Give the language a name, a display direction, a default Google domain, and set the locales. Then translate each row on the screen and click the <em>Create</em> button at the very bottom to finish.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="0c2d6f7d-c343-4333-af92-c24ce9c9fa38"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">When creating a new language, you will see an option to <em>Auto translate</em> to a specific language. This will use Google Translate and is a recommended way to start quickly. However, <em>please check the results of this tool </em>for completeness, as not all phrases may be translated at this time. </div></figure><h3 id="44a4f317-3cc8-44ad-8fd4-1db35beb5dee" class="">Editing pages</h3><p id="8a67a4dc-377e-49de-99c4-21aac1b205e1" class="">The <strong>Content &gt; Pages </strong>subsection allows you to edit one of the script’s default pages. It is not possible to fully customize these built-in pages, but you will find many customization options. In addition to editing page titles and meta tags, you will find the following specialized options:</p><ul id="188aee72-e4ba-43a0-b55e-a7fb0de28b58" class="bulleted-list"><li style="list-style-type:disc"><strong>Home </strong>– Easily edit the translations for the home page content.</li></ul><ul id="4b802ef0-b7c3-4e3f-84a0-455ba1156e4c" class="bulleted-list"><li style="list-style-type:disc"><strong>Tools </strong>– Manage tool categories, descriptions, and sorting.</li></ul><ul id="096f3042-0d35-4ecf-87de-aa0c4903a2c1" class="bulleted-list"><li style="list-style-type:disc"><strong>Terms of Service </strong>– Create a terms of service page &amp; require agreement from users.</li></ul><ul id="a036f428-fc7f-4482-a87d-daab2e9e014e" class="bulleted-list"><li style="list-style-type:disc"><strong>Privacy Policy </strong>– Create a privacy policy page &amp; require agreement from users.</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f0f95ab0-e0f0-4afd-aa94-f876d893fa2b"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">You will find a language dropdown at the top right while editing a page. When multiple languages are installed at once, you can toggle between the languages to customize the page for each. All page customizations are done on a <em>per-language basis</em>.</div></figure><h3 id="8a2e410a-18d3-437f-ac78-2a59fb890818" class="">Editing tools</h3><p id="a63f0e70-7626-42af-99cc-7ba5977bf76c" class="">The <strong>Content &gt; Tools </strong>subsection allows you to manage the tools on the system, including:</p><ul id="98fcec6f-c060-4877-8b04-c0cced6782f0" class="bulleted-list"><li style="list-style-type:disc">Enabling and disabling tools</li></ul><ul id="8af186a5-a7b1-4b32-8e9f-55a0507cd12b" class="bulleted-list"><li style="list-style-type:disc">Changing tool icons</li></ul><ul id="bd91c8b2-84a6-4620-a2bb-445a98bf8e94" class="bulleted-list"><li style="list-style-type:disc">Changing tool names</li></ul><ul id="a9f79bd0-3487-471f-8e67-45db01766097" class="bulleted-list"><li style="list-style-type:disc">Setting page titles and meta tags for tools</li></ul><ul id="1e8c4900-44ca-4721-b20e-39282b31906d" class="bulleted-list"><li style="list-style-type:disc">Adding custom content to tool pages</li></ul><ul id="982d77bd-2e4d-480e-82e5-4a3c1bd450c2" class="bulleted-list"><li style="list-style-type:disc">Generate tool embedding snippets</li></ul><p id="f743de27-56bd-45c0-aeed-67c297efc439" class="">With these options it is possible to further personalize your website, and to further increase the content value and search indexability.</p><h3 id="665d5b2d-6c71-449b-8fd1-f04dc17c59ad" class="">Embedding tools onto another website</h3><p id="1d6cccc2-9271-4254-a8ec-764771589813" class="">It is quite common that this script is installed into a hidden subdirectory on a WordPress website, and then the tools are embedded individually onto the main WordPress website, <em>effectively turning this script into a WordPress plugin</em>.</p><p id="a76bab7f-ca8d-451d-bfa0-7e7aa89446b8" class="">To embed a tool, go to <strong>Content &gt; Tools</strong> and click the <em>Embed tools </em>button at the top right. Select the tool that you’d like to embed and customize the options to suit your needs, then click <em>Generate</em>. You will want to copy and paste the resulting snippet onto another website.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ab38d179-8ef8-45e4-ac06-fab9dafe8521"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">I have found that some web hosts will enforce an <code>X-Frame-Options</code> header on the website, which prevents these embeds from working on other domains. This will often manifest with the embed showing a “Refused to connect” error. If you are experiencing this issue, please contact your web host and ask them to remove this header.</div></figure><h3 id="22eda459-140e-4c09-b143-c636d79d7e2e" class="">Inserting ad banners</h3><p id="f51e8251-132b-4335-a544-71b5a521d0fd" class="">The <strong>Content &gt; Advertising </strong>subsection allows you to insert ad banners into the script. I do not recommend any specific advertising vendor. However, if you have an approved advertising account, you may insert your ad banner snippet codes into the slots shown in this section.</p><p id="0c8432d3-75c3-4096-a1e3-4dc69f3bb6fe" class="">You will find various slot sizes, such as <code>728x90</code> and <code>120x600</code>. Generate banner codes with your advertising vendor that are <em>equal to or slightly less than</em> the specified sizes. Do not exceed these sizes in either direction to ensure a consistent layout.</p><p id="a3a6781f-9ff3-40ba-9234-23db70a7b3f3" class="">There is a <em>Preview mode</em> available for your convenience. Simply enable this mode and view the public website to see where the various ad banner slots will appear. Please note that this is not fully accurate, as the slots can rearrange slightly based on which slots are filled and which are empty.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="9aa69f3a-1d41-4c89-b7a9-9530111ba80e"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Make sure to disable <em>Preview mode</em> when you are finished previewing! Otherwise your ad banners will not appear.</div></figure><p id="5a038203-85b1-4769-83e8-78a03422d231" class="">You will also find a <strong>settings</strong> section on this page, where you can limit the number of ad banners that will be shown on a single page at once, as well as disable advertising banners for certain user groups (such as for premium users).</p><h2 id="e613ed7d-a328-4df2-abd6-0043b3299846" class="">Managing cloud services</h2><h3 id="3cb1d77c-13f3-483a-ae83-e700b9079e42" class="">Setting up the cron job</h3><p id="02743499-c9d7-4647-863d-a46bf2bde9f4" class="">The <strong>Services &gt; Cron </strong>subsection helps configure or track the status of the application’s cron job. This cron job is a small script that must run periodically. It will perform various important functions:</p><ul id="790c6c77-1f0e-4c16-91b0-a45210b46f35" class="bulleted-list"><li style="list-style-type:disc">Cleaning up the database (e.g. of expired cache)</li></ul><ul id="ad1084cc-f2b1-443f-8ea0-b45945a29627" class="bulleted-list"><li style="list-style-type:disc">Checking for and installing new updates</li></ul><ul id="9c4bf75b-4274-478c-b083-4596a68e45f7" class="bulleted-list"><li style="list-style-type:disc">Sending usage telemetry to the developer</li></ul><p id="72c8526e-4da5-42fa-8bbb-08609a8369f7" class="">There are two ways to activate the cron job:</p><ul id="0553a3dd-2e89-4da4-a5a9-5f30dd9b7416" class="bulleted-list"><li style="list-style-type:disc"><strong>Remotely </strong>– I’ve designed a cloud-based system that will run your cron job over the internet every few hours. It’s free, all you need to do is click the <em>Activate</em> button.</li></ul><ul id="0186c506-b2bf-4ed1-91a4-d6fbf9df8091" class="bulleted-list"><li style="list-style-type:disc"><strong>Manually </strong>– If you’re experienced with setting up cron jobs, you can set it up locally with the instructions on this page.</li></ul><p id="eeb7ce7e-960c-4ceb-b6a5-4a281d2d2415" class="">So which method is best? Well, the <strong>remote</strong> method is most ideal if you have a high traffic website, because my system will always run your cron job immediately after a new update is released. This means if a new update is released to fix a broken tool, for example, your downtime will be minimal.</p><p id="59565118-0041-4280-a266-74ca4a520010" class="">Please note that the <strong>remote </strong>method only works on public web servers. In some cases, firewalls or security services (such as Cloudflare) may prevent the connection, in which case the script will tell you that it cannot activate the service.</p><p id="309a1739-c2cd-41e1-9943-5619cf2f694d" class="">Finally, please note that enabling the <strong>remote </strong>service will send the public URL of your website to me, the developer (it’s required in order to run the cron job remotely, after all). This information is normally private to me, but I won’t abuse it in any way, I promise! 👍</p><h3 id="b85dfea7-22d4-4b22-a7b7-bcaa807147da" class="">Setting up Google proxying</h3><p id="e856f882-ca5c-4dd4-b885-c20bf58cd607" class="">At this time, there is no official support for configuring proxies in the script. If you honestly need this feature, please let me know and I will prioritize it. However, to date I have never had a request for this feature, because...</p><p id="1fde9e72-fade-4330-a897-9423191a1e1a" class="">There’s free proxying available in the script at <strong>Services &gt; Google</strong>! When opting into this service, you will receive a default quota of <code>500</code> search queries per day. This quota will increase over time on its own, but you can also email me if you need a higher quota. It will still be free. :)</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="dd6b00b7-43ee-4881-bd07-13f9829a9b5a"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%"><strong>Before you activate, read this! 
+
+</strong>It’s important to read the terms of the service. They’re not so much terms as they are an explanation of how it works. In short, by opting into the service, the script will automatically proxy searches (when necessary) using a network of servers. 
+
+However, in doing so, you will also make your own server available as a part of the network to <em>very periodically </em>perform a search for the network. It’s sort of like torrenting, but for searching the web, and is the best solution I could come up with that was free.
+
+As your server handles more queries for the network, your quota will increase further over time, allowing you to request more queries from the network.
+
+If this sounds alright to you, then go ahead and give it a try. You can disable it at any time.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="2dc1c5a1-7b29-4e6a-94f7-166c64faad01"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%"><strong>Developers who are curious about this offering, read here!
+
+</strong>If you are concerned about this being abused, please do not worry. The searches are performed on your server using the <code>includes/execute/google.php</code> file. This file is a bundle, just like the script’s installer, whose source code can be read entirely using <a href="https://github.com/baileyherbert/packr">Packr</a>.
+
+The script is hard-coded to only accept requests for a specific list of search engines, and it authenticates each request to ensure it is coming from my servers. In addition, I act as a middleman for all requests, so your server IP or domain is never exposed.</div></figure><h2 id="cf88373b-5b5a-4e50-a881-2727fb22a601" class="">Installing updates</h2><p id="ab9a27d9-112c-4111-8167-b4f821ed7fbc" class="">The <strong>Updates </strong>section in the admin sidebar allows you to check for and install the latest updates. This is the only recommended way to install updates to the script.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a54ed8d1-ec86-46b7-9ac3-9fd38d951c1c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">When updates are available, you can click on the <em>More options</em> button to see each available update in detail, including the files it will modify. You can also download the update’s files as an archive, but this is only for auditing and is not intended for installation.</div></figure><p id="280b194e-2777-4579-9cfe-7fe7c62aa918" class="">It is recommended to enable the <em>Automatically update Studio</em> setting in the <strong>Settings &gt; Configuration</strong> subsection of the admin panel, and to ensure the cron job is running periodically. This will automatically install updates to keep your tools working, as they do sometimes break.</p><p id="11276f82-614f-4478-9915-52663507473b" class="">You can monitor when updates are installed automatically in two ways:</p><ul id="3d859a95-0a5e-4936-beec-72158933e1f9" class="bulleted-list"><li style="list-style-type:disc">The admin dashboard will show each version that was installed automatically in the activity log.</li></ul><ul id="038afd05-ec15-4d1a-a402-4b321fe6156a" class="bulleted-list"><li style="list-style-type:disc">The updates page will show each update under the <em>View history</em> menu.</li></ul><h2 id="f503283b-0ce6-4983-a8bf-e9de1334c770" class="">Managing users &amp; groups</h2><p id="5d50d03d-9e8c-4a49-bf64-a8fa0cba27a0" class="">The <strong>Users </strong>section in the admin sidebar allows you to manage users and groups, and to monitor the usage of your website’s tools.</p><h3 id="2f15f09a-a8bb-4265-8fa4-db129e74aee9" class="">Managing users</h3><p id="2cf002c2-5669-4c2a-988f-994fd0bcebb3" class="">The <strong>Users &gt; Users </strong>subsection shows a list of users registered in the system. By default, you will see your default administrative account as the first user. Click on an email address or the ••• button to view and edit the user’s profile.</p><p id="c785b36c-dbee-4149-97a0-f85fc3cdcdaf" class="">While viewing a user’s profile, you will see a list of the websites saved to their account and a list of their recent tool usage. You’ll also find options at the top right to change their password, override their email address, and assign them to a new group.</p><p id="ec739c6f-e139-4118-ac7b-847f0f816e6c" class="">You can also create new users, and export a list of users as a CSV file, from the top right of the users list.</p><h3 id="9d8d5259-3fb9-49cc-8950-bcefc12a3775" class="">Managing user groups</h3><p id="d6568024-313e-429d-bc40-74abafd12e79" class="">The <strong>Users &gt; Groups </strong>subsection shows a list of groups registered in the system. Groups are a way to organize your users and to change what permissions they have. Other parts of the application, such as the advertising system or extensions, can change their behavior for specific groups.</p><h3 id="89f57056-e5ba-4f93-8a70-157661b9ce68" class="">Monitoring tool usage</h3><p id="5376db05-28d3-4ba5-9247-a0e0bcb070c4" class="">The <strong>Users &gt; Tool usage </strong>subsection shows a complete list of recent tool usage by both your registered users and visitors. </p><p id="94aafce1-6eb4-4e77-9d30-23613929c77d" class="">For each row, you will find the unique ID of the tool, the domain name that was entered into the tool (if applicable) as well as any extra tool input (where applicable), and the time at which this usage occurred. You can hover over the time to see a full timestamp.</p><h2 id="7424f53d-f08a-4b48-84e9-58e4ef7efa16" class="">Extensions</h2><h3 id="7155fb0b-29e5-4227-9c7d-bc22394d9de9" class="">Setting up a contact page</h3><p id="08beefc7-a88d-48e7-820b-ed5b926cf481" class="">The application includes a free, built-in extension which adds a contact page to the public website when enabled. You can enable this extension from <strong>Settings &gt; Extensions &gt; Easy Contact Page</strong>.</p><p id="efa8f20b-e0dc-4fb5-b9ef-6cca495c6841" class="">Once enabled, if the extension has not yet been configured, a message will appear at the top of the admin panel saying:</p><blockquote id="8697089b-da24-497b-adcf-fe5d394c73f7" class=""><em>The contact page will not work until you </em><span style="border-bottom:0.05em solid"><em>configure the extension</em></span><em>.</em></blockquote><p id="b4d2df35-6822-4ded-935d-6da8b282c219" class="">In this case you must head into the extension’s settings, either by clicking the <em>Settings </em>button from the extension list, or by clicking on the <span style="border-bottom:0.05em solid"><em>configure the extension</em></span> link in the notification bar as was quoted above. </p><p id="82bd3555-804e-4085-812c-a6398095e9bb" class="">Then configure the following options on the extension:</p><ul id="16707bd4-85a1-44ed-8fbc-47263069c9fd" class="bulleted-list"><li style="list-style-type:disc"><strong>Subject </strong>– The subject of the email that will be sent to you when the form is submitted.<ul id="a76668cb-7abe-41cf-94dd-f38ca0893de0" class="bulleted-list"><li style="list-style-type:circle">Example: <em>New contact form submission from Website Name</em></li></ul></li></ul><ul id="3fce4b8d-49b0-4e19-99bf-6599398e48fd" class="bulleted-list"><li style="list-style-type:disc"><strong>Send messages to </strong>– Enter the email address where you’d like to receive form submissions.</li></ul><p id="c1a43f4e-77bf-4dfa-b349-600d2f350131" class="">Finally, make sure that your system is configured to send email by going to <strong>Settings &gt; Mail </strong>and sending a test email, or you can test the contact form on the website to see if it works.</p><h3 id="efa24b4c-ffde-441e-b679-522d3502d20c" class="">Setting up subscription plans</h3><p id="20915e76-0bef-4111-b8b8-bbd37719ac36" class="">The application includes an experimental extension which adds pricing plans to the script. These pricing plans can be assigned recurring or one-time fees which will be charged using PayPal. If this sounds interesting to you, please review the following warnings first: </p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="3fee7759-a128-4535-9595-d61bc65571f1"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%">An <strong>extended license</strong> from CodeCanyon is required to use this extension in production, however it is still available on regular licenses for testing, experimentation, and trial. Please contact <a href="https://help.market.envato.com/hc/en-us/requests/new?ticket_form_id=170903">Envato Support</a> to upgrade your license if necessary.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f62f2733-8385-4346-ac2f-88ce8309a88a"><div style="font-size:1.5em"><span class="icon">🚨</span></div><div style="width:100%">There isn’t a live demo with this extension because it’s purely experimental. This application is not intended for commercialization due to the web scraping nature. Please review your local laws on commercial use of scraped data, and use at your own risk!</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="eacc1792-b6ce-40ef-abdd-2879ecaa9eb2"><div style="font-size:1.5em"><span class="icon">🚧</span></div><div style="width:100%">This extension was only intended as a proof-of-concept, though it has been used by many websites successfully. If you’re a developer, please feel free to reference the extension’s code and build upon it.</div></figure><p id="9832c180-d125-41bb-93f2-e2cc7c16e6fa" class="">First, enable the extension under <strong>Settings &gt; Extensions </strong>from within the admin panel. You will see an extension named <em>Subscriptions &amp; Plans</em>, with a button to enable it. </p><p id="620823c1-9a77-4b57-a83d-127342b2342d" class="">Once the extension is enabled, two new links will appear in the left admin sidebar under a category named <em>Subscriptions</em>. Follow the below instructions to set up the extension:</p><ol type="1" id="d0af71c4-6b5a-43af-9b2a-6aba7c47469b" class="numbered-list" start="1"><li>Click on the <strong>Subscriptions &gt; Options </strong>link in the admin sidebar and configure the extension’s settings. You will need to enter your PayPal account’s business email address and set the currency code to match your account.</li></ol><ol type="1" id="6da7c858-2829-40fe-ae90-af7d51f6e383" class="numbered-list" start="2"><li>Click on the <strong>Subscriptions &gt; Plans </strong>link in the admin sidebar. You will see that a default <em>Free </em>plan has been configured automatically. The following instructions will assume that you wish to enter a free plan. Even if you don’t want this, you should still try it out for learning.<ol type="a" id="eeb1d122-68ed-447c-aedc-cc2ff8bfc6f1" class="numbered-list" start="1"><li>Click the <em>Edit</em> button on the <em>Free</em> plan.</li></ol><ol type="a" id="4aa8efdc-bb57-4512-aa5e-8f894258759c" class="numbered-list" start="2"><li>Note that the plan has been assigned to the default user group, which is normally named <em>Standard</em> unless you have customized it. This extension uses <em>user groups</em> to determine which plan a user is on. This means each plan must be assigned its own unique group.</li></ol><ol type="a" id="ca97b0ce-21c3-4562-aff6-9571723d5b31" class="numbered-list" start="3"><li>The <em>Allowed tools</em> section will grant users on this plan access to all of the selected tools. By default, all of the tools will be selected. Edit this field and select which tools you want users to access for free. Hold the <em>Ctrl</em> key to select multiple tools.</li></ol><ol type="a" id="94776433-bc1e-49a1-ac61-2a56cd8c616e" class="numbered-list" start="4"><li>The <em>Pricing </em>section allows you to define the cost for one-time, monthly, and annual subscriptions to this plan.<ol type="i" id="0a22fb77-62e7-4196-b292-31fdbaaa882c" class="numbered-list" start="1"><li>Setting all of the costs to 0 will make the plan free.</li></ol><ol type="i" id="4db951e8-9247-49de-91f4-df1b317f596f" class="numbered-list" start="2"><li>However, if you set a cost greater than 0 for one field, setting the others to 0 will disable them. For example, if monthly cost is $20, and annual cost is $0, then users can pay monthly but not annually.</li></ol></li></ol><ol type="a" id="1cd28623-ae7e-49fc-b117-fdcd33a91ed3" class="numbered-list" start="5"><li>The <em>Options </em>section allows you to change the behavior of the plan. In nearly all cases, you will want to set the <em>When a user purchases this plan, move them to the following group</em> field to match the user group defined in step <em>b</em>.</li></ol><ol type="a" id="87816cf0-d6d2-491d-982d-8e1e240da991" class="numbered-list" start="6"><li>Click the <em>Save</em> button.</li></ol></li></ol><p id="c9021065-fdff-49e6-9646-4aa68328ca68" class="">Now with the <em>Free</em> plan configured as desired, it’s time to create a new premium plan. These instructions will create a new plan named<em> “Pro” </em>which costs $9 /month or $90 /year.</p><ol type="1" id="42f78ab7-bd29-4da9-b5e3-9c249d4983c7" class="numbered-list" start="1"><li>Create a new user group at <strong>Users &gt; Groups</strong> named “Pro”. Leave all permissions at their default selections unless desired and click the <em>Create group</em> button.</li></ol><ol type="1" id="a6ac98a2-2b03-4eef-9976-9174af73bfcb" class="numbered-list" start="2"><li>At the top right of the <strong>Subscriptions &gt; Plans </strong>page, click the <em>New plan</em> button.</li></ol><ol type="1" id="fa907187-e3f0-43d9-826d-a35bedbb4385" class="numbered-list" start="3"><li>Enter the name “Pro”.</li></ol><ol type="1" id="92a8e84c-e848-4b66-b5e4-a93bccbcdbcc" class="numbered-list" start="4"><li>Select the “Pro” group.</li></ol><ol type="1" id="b77d92bc-9a97-40c1-8d49-2481d9146eec" class="numbered-list" start="5"><li>Select the tools that this group will have access to. Hold the <em>Ctrl</em> key to select multiple. You will also need to make sure you select all of the tools that the lesser plan(s) have access to. In this case, make sure to also select everything that you selected in the <em>Free </em>plan configured above.</li></ol><ol type="1" id="970967bb-fc01-4c33-b686-7412efe4d00c" class="numbered-list" start="6"><li>Enter a monthly cost of <code>9</code> and an annual cost of <code>90</code>.</li></ol><ol type="1" id="8b51761b-3779-4fb2-9737-f50557474359" class="numbered-list" start="7"><li>Under the <em>When a user purchases this plan, move them to the following group</em> option, select the “Pro” group.</li></ol><ol type="1" id="d58e0231-7d85-43f5-82b6-99a05b06a510" class="numbered-list" start="8"><li>Click the <em>Save</em> button.</li></ol><p id="4bb63ba7-8b23-4acf-a78c-82859e714b1b" class="">Now visit the public website and head over to the new <em>Pricing </em>page in the header. You should see your two plans with a breakdown of their enabled tools and their prices.</p><p id="34cbe3c9-b0d7-438e-bb9e-d47ad844d8fa" class="">I recommend creating a new standard account on the website for testing. Go ahead and sign out, then register a new account from the pricing page by clicking “sign up” under the free plan. In the below section, I’ll show you how to manage that user’s subscription from the admin panel.</p><h3 id="89a1b474-8c76-4812-ae34-82cf6fc468bd" class="">Managing user subscriptions</h3><p id="0a636c83-2249-49ff-96bb-ac45c265ecae" class="">When the subscriptions extension is active, the <strong>Users &gt; Users </strong>subsection of the admin panel will have additional options when viewing a user’s profile. Click on the user you’d like to manage.</p><p id="cc38b3be-a310-4ef7-a00c-d02589ef1f83" class="">At the top of their profile will appear a <em>subscription</em> section showing their current plan and details about the subscription, such as when it expires, when they first subscribed, and when their last payment was received.</p><p id="2b81ed8e-2e62-44ad-b18d-96e2fc63ccb6" class="">To <strong>change the user’s plan</strong>, click on the <em>Change plan</em> button and select the new plan. By default, their current expiration date will be transferred to the new plan. If you are moving a user from the <em>Free</em> plan to a premium plan, this means their premium plan will never expire.</p><p id="ea39f8dc-c871-4e70-ada8-920a049afe61" class="">To <strong>change the user’s expiration date</strong>, click on the <em>Manual adjust</em> button. If the user’s subscription is currently set to never expire, you should first click the <em>Expire now</em> button. Then, click on either the <em>+1 month</em> or the <em>+1 year</em> button to set or add to the duration of the subscription.</p><h2 id="8ad1411b-0114-4c30-8e01-6e8a42f85978" class="">Debugging</h2><p id="ddb1b2bb-7d8e-420b-bc7b-ff40994ba0a4" class="">Due to the dynamic nature of this application, errors do periodically occur. In most cases, the application will handle those errors silently and the page will work as expected. If something isn’t working quite right in the application, here are some things you can try.</p><h3 id="4d82586c-4793-4cd1-a2f6-977d9c50c341" class="">Viewing the error log</h3><p id="7fd33f2a-e8f5-408b-9a86-941860851c82" class="">Open the <strong>Help &gt; Diagnostics </strong>subsection of the admin panel. You will find an <em>Errors</em> section near the bottom of this page which shows recent errors that have occurred in the script.</p><h3 id="b9a6bc0c-3ecf-4b0f-92fb-843f7acd6108" class="">Running diagnostic tests</h3><p id="934e4a6a-0a6b-43b7-9e59-0911c9e23f1d" class="">If there is a problem in the script, the diagnostics in the admin panel might be able to detect the issue and provide further details. Open the <strong>Help &gt; Diagnostics </strong>subsection of the admin panel and click the <em>Start</em> button near the top.</p><h2 id="c1e88c3e-563a-43ed-997c-2d7c1ab17d82" class="">Activation</h2><h3 id="dd757c5a-1c6a-44c5-9fcb-f9adaba86b62" class="">Activating the application</h3><p id="03b17d4d-224f-4d9b-a145-39b22979a835" class="">To activate the application from the admin panel, go to the <strong>Help &gt; Diagnostics </strong>admin subsection and click the activate button on the right side. You will be prompted to sign in with your Envato account, after which you will be able to choose from a list of licenses under your account.</p><h3 id="e5de1546-8483-4c32-87f8-7e0658283168" class="">Deactivating or moving the license</h3><p id="c03ae57c-cee4-49ad-8ec6-b8721fc2db9d" class="">You don’t need to deactivate your application under any circumstance. If you wish to activate an installation with the same license later, you will automatically be taken to a license manager where you can deactivate the old installation. </p><p id="ee263ae6-89bc-4850-b83b-2cd875efc01a" class="">In some cases, the license manager will deactivate the old installation automatically, and the new activation will be seamless. Regardless, you don’t need to worry about it, just follow the steps during the new activation and you’ll be on your way. 👍</p><h2 id="a0ae5f4d-83f1-4c14-be3b-5f124dfdcb7e" class="">Technical information</h2><h3 id="a435a070-5435-4c68-b9d6-c31b85eb7418" class="">Telemetry &amp; data collection</h3><p id="c2eac617-32f2-4d06-a81d-200f5694df0d" class="">In the <strong>Settings &gt; Configuration </strong>subsection of the admin panel, an option is presented titled <em>Send anonymous usage info</em>. When enabled, the application will send some basic information to the developer (that’s me!) every few days. This information is limited to:</p><ul id="f8e56337-8374-4bb9-9230-5f840a49db2f" class="bulleted-list"><li style="list-style-type:disc">PHP version</li></ul><ul id="41b6c4eb-1ab0-4542-988d-4a8dfe1e43a5" class="bulleted-list"><li style="list-style-type:disc">PHP extension versions</li></ul><ul id="d19c8dfa-ff7f-4c45-9bc1-497f8c458a87" class="bulleted-list"><li style="list-style-type:disc">SEO Studio version</li></ul><ul id="35ac6f72-eaf2-4ddf-82fe-087b3a282dd8" class="bulleted-list"><li style="list-style-type:disc">Whether or not the application is licensed</li></ul><ul id="2e26b063-100c-443a-a3f1-1a97fc55330e" class="bulleted-list"><li style="list-style-type:disc">cURL versions</li></ul><ul id="ced6e63a-68e7-4481-9194-88c240d2b20e" class="bulleted-list"><li style="list-style-type:disc">MySQL server version</li></ul><ul id="5366d8cf-d167-44d5-a119-65b0d077e805" class="bulleted-list"><li style="list-style-type:disc">The number of times each tool was used in the time period</li></ul><p id="1639f656-0af2-48ce-8ea2-2d1d18024c5a" class="">This information <em>does not include</em> any data on you or your users, it <em>does not </em>include any inputs or script settings, it’s exactly as listed above. </p><p id="520974b0-75aa-4058-a1f3-831a8b2f3051" class="">I use this information to make informed decisions about increasing server requirements. For instance, in 2018 I increased the script’s minimum PHP version 5.5 when I actually wanted to increase it to 5.6, however my telemetry showed too many users were still on 5.5.</p><p id="e1428655-9fa6-4fa5-8d3e-1bf7277809f6" class="">I also use this information to monitor the popularity of tools, which allows me to focus my development in those areas. </p><p id="2c682dcc-e8bc-488e-abb6-239aa1a0a639" class=""><strong>I strongly recommend enabling this option to make sure you are included in these kinds of decisions and targeted development!</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="a17283c6-a3f3-4250-b82b-4ee6f277d80c"><div style="font-size:1.5em"><span class="icon">💡</span></div><div style="width:100%">Nothing to hide here! You can always view the last usage report that was sent to the developer. It will be saved to <code>/resources/bin/last-usage.txt</code> in the script.</div></figure><h2 id="9a717700-1b44-4e92-9255-cd05b3ae0ec7" class="">Update backups</h2><p id="cceac9cb-eaeb-4847-99ca-9bd660c5a246" class="">In the <strong>Settings &gt; Configuration </strong>subsection of the admin panel, an option is shown titled <em>Save files before updating</em>. When enabled, the script will create before each update a zipped archive with a copy of all files that the update will modify.</p><p id="c9fea894-e2d2-43a4-a4d0-393c9e0a3874" class="">For example, if you’ve made changes to a file in the script and accidentally left updates enabled, your work is saved inside one of these archives and can be recovered.</p><p id="7774e9b1-63f8-43a1-b5fd-4c6f8d809aa9" class="">These archives are saved under the <code>/resources/bin/</code> directory and have randomized names in the format: <code>backup-update-7b0e0a11a2180-d1315e94dab53d64a6-1651992500.zip</code>. You can reference the creation time of these files to find the one from the most recent update.</p><h2 id="2c815c17-6d8f-4ac3-a6c1-118768d2c857" class="">Recovering from failed updates</h2><p id="619208b0-1289-4c04-adb4-31b3af76908d" class="">This is such a rare event that to my knowledge it hasn’t happened even once in the lifetime of this application. For example, if server unexpectedly shuts down while the script is updating, corruption may occur.</p><p id="bebb6b9f-1b2b-48d2-be10-3ae059dbf7cc" class="">In this case, the update manager will automatically lock both the public website and the admin panel with the following message:</p><blockquote id="26d459d0-462e-4a73-9298-5046f675e65c" class=""><strong><em>Critical error
+</em></strong><em>A recent update failed during file extraction. In order to protect the system, the site has been disabled. Please contact customer support for help on restoring the overwritten files.</em></blockquote><p id="ab3021d4-1318-4fef-86db-72ad000319cf" class="">This error is shown due to the presence of a lock file at one or both of the following locations which signals that the update process did not exit cleanly:</p><ul id="975b9ed4-1f6c-48a1-b566-e27524658724" class="bulleted-list"><li style="list-style-type:disc"><code>/lock</code></li></ul><ul id="869f9996-08ef-4f6c-9285-9b4316d313d7" class="bulleted-list"><li style="list-style-type:disc"><code>/resources/bin/lock</code></li></ul><p id="131812bd-a976-43b5-bf5c-8c2369b78f13" class="">You can open these files with a text editor to learn more about what went wrong. There will be a list of files that the update manager successfully modified, as well as a file path under the <code>FAILED_ON</code> key which is where the failure occurred.</p><p id="55bd2764-6dae-4833-ab64-c92fd25490f1" class="">To recover from this event, please refer to the <em><strong>Update backups</strong></em> section directly above this section, where you will learn how to restore the modified files to their original versions. </p><p id="324b082c-2972-4246-a6b5-993e1255c6a6" class="">Please restore all files in the backup, even if they were not responsible for the failure, to fully return to the prior version. Then delete both of the lock files and reattempt the update.</p><h1 id="7c7cc1f8-6c71-4b8a-8608-d5e60f73d960" class="">Disclaimers</h1><h2 id="7d4e5c18-3bc2-4e2e-ae92-1693db3adc5b" class="">This script is a web scraper</h2><p id="9449d66c-baac-4ce3-8834-4cb449b3fb3d" class="">It’s important to note that this application is a <strong>web scraper</strong>. This means it retrieves most of its data from other websites, and it typically does so by disguising itself as a normal user of those websites. This has some important implications:</p><ul id="a8bb3faa-5c4b-444a-bf68-5eff15c155b7" class="bulleted-list"><li style="list-style-type:disc">When a data source experiences an outage, the relevant tools will temporarily stop working.</li></ul><ul id="9bd0ec38-1fc1-42ca-b74e-2204a7876f0e" class="bulleted-list"><li style="list-style-type:disc">When a data source shuts down their operations, the relevant tools will be permanently broken unless the developer can find a new alternative data source.</li></ul><h2 id="5b66bbd7-50d9-462b-8258-5cad50d7cad9" class="">Data sources can go offline</h2><p id="f16400e4-235f-49ed-a964-8abf9a2c4d00" class="">The above scenarios happened in 2022, when the data sources we used for domain analysis (alexa.com) and backlinks (seoprofiler.com) both shut down within a week of eachother.</p><p id="57b6eb55-bdef-413e-8d14-a002c0756838" class="">I managed to find alternative data sources for both and released an update after about one week of downtime, but we had to remove an Alexa Rank tool. In its place, I released two new tools for checking page and domain authority.</p><p id="a5c25cd2-11d3-44c0-9fb4-e4ccb81ef22b" class="">There’s no guarantee that when a data source shuts down we’ll be able to find a replacement for it. This means you should be prepared, however unlikely it may be, that tools can be suddenly removed from the script if absolutely necessary.</p><p id="0af51eb4-43b4-456e-aeaf-3e3696750c1d" class="">However, my guarantee to you is that when tools are removed from the script, I will endeavor to add at least the same number of new tools to the script as quickly as possible.</p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="cb6191a1-d5e4-4c55-b34b-4ff48b275786"><div style="font-size:1.5em"><span class="icon">📢</span></div><div style="width:100%">The most likely data sources to stop working are those for <em>keyword research</em>, which I find myself having to replace every couple of years. The number of available data sources for keyword research has been declining rapidly in recent years, so be prepared for the worst.</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="11cd11c1-f933-432f-8475-45a82b9ecac7"><div style="font-size:1.5em"><span class="icon">✅</span></div><div style="width:100%">Make sure to enable automatic updates in the script, and ensure that your cron job is running periodically, so your tools can be updated with new fixes or data sources!</div></figure><h1 id="134ac928-3f7d-45ee-b205-956ef4bc3290" class="">Credits</h1><p id="1ed32863-0560-4f01-9874-b840d508be5d" class="">The following assets and libraries were used in this application. Please note that all of these assets have been licensed for this usage. </p><p id="54aedd72-0b04-4661-8a96-c472c9548ab2" class="">You are <span style="border-bottom:0.05em solid">not authorized</span><strong> </strong>to use these assets and libraries without acquiring your own additional license, except in the context of this application, or a single derived work without modifying the assets.</p><p id="0d05ad6f-13fe-4e2a-98fa-3ddd644f82ef" class="">You are <span style="border-bottom:0.05em solid">not authorized</span><strong> </strong>to modify any bundled image assets derived from the following items without acquiring your own additional license. For example, you <strong>cannot </strong>take the existing SEO Studio logo and change its text.</p><p id="ae796955-13c5-4a50-92cf-a8dc8967a7e7" class="">
+</p><ul id="af37be41-0048-402a-8096-4a75c2985f62" class="bulleted-list"><li style="list-style-type:disc"><strong>SEO &amp; Internet Marketing Icons</strong>
+<a href="https://graphicriver.net/item/seo-internet-marketing-icons/4432000">https://graphicriver.net/item/seo-internet-marketing-icons/4432000</a></li></ul><ul id="88b473aa-5e3c-4c11-be74-3492ed0ace31" class="bulleted-list"><li style="list-style-type:disc"><strong>Optimiez Logo
+</strong><a href="https://graphicriver.net/item/optimiez-logo-/4965349">https://graphicriver.net/item/optimiez-logo-/4965349</a></li></ul><ul id="f60a91d8-f30c-4775-8979-b4f918e182fb" class="bulleted-list"><li style="list-style-type:disc"><strong>Simple HTML DOM
+</strong><em>Note: I’ve made heavy modifications to this code under the MIT license.</em><strong>
+</strong><a href="https://sourceforge.net/projects/simplehtmldom/">https://sourceforge.net/projects/simplehtmldom/</a></li></ul><p id="815b47d6-676a-4167-99b1-8a7bfa7baa23" class="">
+</p></div></article></body></html>

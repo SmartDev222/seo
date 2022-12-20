@@ -1,0 +1,27 @@
+// main: ../index.scss
+
+.btn {
+    cursor: pointer;
+    border: 1px solid #aaa;
+
+    color: #aaa;
+    font-size: 12px;
+    letter-spacing: 0.3px;
+    font-weight: 500;
+    padding: 5px 13px;
+
+    border-radius: 100px;
+    -moz-border-radius: 100px;
+    -webkit-border-radius: 100px;
+
+    &.btn-green {
+        border-color: #19CC95;
+        color: #19CC95;
+
+        &:hover {
+            color: #fff;
+            background-color: #19CC95;
+            text-decoration: none;
+        }
+    }
+}

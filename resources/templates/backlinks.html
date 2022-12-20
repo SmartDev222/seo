@@ -1,0 +1,115 @@
+{% if counts %}
+<div class="stats">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>{{ counts.backlinks.total | number_format }}</h3>
+                <span>{{ "backlinks" | rt }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>{{ counts.domains.total | number_format }}</h3>
+                <span>{{ "unique backlinks" | rt }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>{{ counts.backlinks.toHomePage | number_format }}</h3>
+                <span>{{ "links to homepage" | rt }}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>{{ (counts.backlinks.total - counts.backlinks.doFollow) | number_format }}</h3>
+                <span>{{ "nofollow backlinks" | rt }}</span>
+            </div>
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<div class="sticky" id="backlinksSticky">
+    <div class="container">
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th width="110px" class="center">{{ "Strength" | rt }}</th>
+                        <th width="455px">{{ "Page title &amp; location" | rt }}</th>
+                        <th>{{ "Anchor text &amp; destination" | rt }}</th>
+                        <th width="120px" class="center">{{ "Found" | rt }}</th>
+                    </tr>
+                </thead>
+            </table>
+            <a class="up"></a>
+        </div>
+    </div>
+</div>
+
+<div class="table-container">
+    <h2>{{ title }}</h2>
+
+    <table data-sticky="backlinksSticky">
+        <thead>
+            <tr>
+                <th width="75px" class="center">#</th>
+                <th width="455px">{{ "Page title &amp; location" | rt }}</th>
+                <th>{{ "Anchor text &amp; destination" | rt }}</th>
+                <th width="100px" class="center" title="{{ "Page Authority" | rt | e('html_attr') }}">{{ "PA" | rt }}</th>
+                <th width="100px" class="center" title="{{ "Domain Authority" | rt | e('html_attr') }}">{{ "DA" | rt }}</th>
+                <th width="130px" class="center">{{ "Found" | rt }}</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for i, backlink in backlinks %}
+                <tr>
+                    <td class="center">{{ i + 1 }}</td>
+                    <td>
+                        <div class="ellipsis">
+                            <strong title="{{ (backlink.title ?? 'None') | e('html_attr') }}">
+                                {{ backlink.title ?? 'None' }}
+                            </strong>
+                        </div>
+                        <div class="ellipsis">
+                            <a href="{{ (backlink.url_from) | e('html_attr') }}" target="_blank" rel="noopener nofollow">{{ backlink.url_from }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="ellipsis">
+                            <strong title="{{ (backlink.anchor ?? 'None') | e('html_attr') }}">
+                                {{ backlink.anchor ?? 'None' }}
+                            </strong>
+                        </div>
+                        <div class="ellipsis">
+                            <a href="{{ (backlink.url_to) | e('html_attr') }}" target="_blank" rel="noopener nofollow">{{ backlink.url_to }}</a>
+                        </div>
+
+                        {% if backlink.nofollow %}
+                            <span class="red-label">{{ "nofollow" | rt }}</span>
+                        {% endif %}
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ backlink.inlink_rank }}</div>
+                            <div class="circle" style="background-color: {{ authority_color(backlink.inlink_rank) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">
+                        <div class="colored-value">
+                            <div class="value">{{ backlink.domain_inlink_rank }}</div>
+                            <div class="circle" style="background-color: {{ authority_color(backlink.domain_inlink_rank) }}"></div>
+                        </div>
+                    </td>
+                    <td class="center">
+                        {{ backlink.first_seen }}
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="6" class="center">{{ "Nothing to show." | rt }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

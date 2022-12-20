@@ -1,0 +1,337 @@
+{
+	"DZ": {
+		"id": "ChIJ0XsDKGqKfg0RovjXq-O-QHE",
+		"lat": 280338860,
+		"lng": 16596260
+	},
+	"AR": {
+		"id": "ChIJZ8b99fXKvJURqA_wKpl3Lz0",
+		"lat": -384160970,
+		"lng": -636166720
+	},
+	"AU": {
+		"id": "ChIJ38WHZwf9KysRUhNblaFnglM",
+		"lat": -252743980,
+		"lng": 1337751360
+	},
+	"AT": {
+		"id": "ChIJfyqdJZsHbUcRr8Hk3XvUEhA",
+		"lat": 475162310,
+		"lng": 145500720
+	},
+	"BD": {
+		"id": "ChIJp4vhgO2qrTARa_zhxOAoLQ8",
+		"lat": 236849940,
+		"lng": 903563310
+	},
+	"BE": {
+		"id": "ChIJl5fz7WR9wUcR8g_mObTy60c",
+		"lat": 505038870,
+		"lng": 44699360
+	},
+	"BO": {
+		"id": "ChIJlaK7d4nfXpERv-0VAbvCnhw",
+		"lat": -162901540,
+		"lng": -635886530
+	},
+	"BR": {
+		"id": "ChIJzyjM68dZnAARYz4p8gYVWik",
+		"lat": -142350040,
+		"lng": -519252800
+	},
+	"BG": {
+		"id": "ChIJifBbyMH-qEAREEy_aRKgAAA",
+		"lat": 427338830,
+		"lng": 254858300
+	},
+	"CA": {
+		"id": "ChIJ2WrMN9MDDUsRpY9Doiq3aJk",
+		"lat": 561303660,
+		"lng": -1063467710
+	},
+	"CL": {
+		"id": "ChIJL68lBEHFYpYRHbkCERPhBQU",
+		"lat": -356751470,
+		"lng": -715429690
+	},
+	"CO": {
+		"id": "ChIJo5QVrjqkFY4RQKPy7wSaDZo",
+		"lat": 45708680,
+		"lng": -742973330
+	},
+	"CR": {
+		"id": "ChIJJcmsIWLlko8RK5qBNSX3VGI",
+		"lat": 97489169,
+		"lng": -837534280
+	},
+	"HR": {
+		"id": "ChIJ7ZXdCghBNBMRfxtm4STA86A",
+		"lat": 451000000,
+		"lng": 152000000
+	},
+	"CZ": {
+		"id": "ChIJQ4Ld14-UC0cRb1jb03UcZvg",
+		"lat": 498174919,
+		"lng": 154729620
+	},
+	"DK": {
+		"id": "ChIJ-1-U7rYnS0YRzZLgw9BDh1I",
+		"lat": 562639200,
+		"lng": 95017850
+	},
+	"EC": {
+		"id": "ChIJ1UuaqN2HI5ARAjecEQSvdp0",
+		"lat": -18312390,
+		"lng": -781834060
+	},
+	"EG": {
+		"id": "ChIJ6TZcw3aJNhQRRMTEJQmgRSw",
+		"lat": 268205530,
+		"lng": 308024980
+	},
+	"SV": {
+		"id": "ChIJVwZkWaYnY48RMkiFmOsWmm8",
+		"lat": 137941850,
+		"lng": -888965300
+	},
+	"EE": {
+		"id": "ChIJ_UuggpyUkkYRwyW0T7qf6kA",
+		"lat": 585952720,
+		"lng": 250136070
+	},
+	"FI": {
+		"id": "ChIJ3fYyS9_KgUYREKh1PNZGAQA",
+		"lat": 619241099,
+		"lng": 257481510
+	},
+	"FR": {
+		"id": "ChIJMVd4MymgVA0R99lHx5Y__Ws",
+		"lat": 462276380,
+		"lng": 22137490
+	},
+	"DE": {
+		"id": "ChIJa76xwh5ymkcRW-WRjmtd6HU",
+		"lat": 511656910,
+		"lng": 104515260
+	},
+	"GR": {
+		"id": "ChIJY2xxEcdKWxMRHS2a3HUXOjY",
+		"lat": 390742080,
+		"lng": 218243120
+	},
+	"GT": {
+		"id": "ChIJa1DnNlATiIURu9WEWzcrmDU",
+		"lat": 157834710,
+		"lng": -902307590
+	},
+	"HK": {
+		"id": "ChIJD5gyo-3iAzQRfMnq27qzivA",
+		"lat": 223193039,
+		"lng": 1141693611
+	},
+	"HU": {
+		"id": "ChIJw-Q333uDQUcREBAeDCnEAAA",
+		"lat": 471624940,
+		"lng": 195033040
+	},
+	"IN": {
+		"id": "ChIJkbeSa_BfYzARphNChaFPjNc",
+		"lat": 205936840,
+		"lng": 789628800
+	},
+	"ID": {
+		"id": "ChIJtwRkSdcHTCwRhfStG-dNe-M",
+		"lat": -7892750,
+		"lng": 1139213270
+	},
+	"IE": {
+		"id": "ChIJj2lzXZ5hXkgRjcZqTUQ5m8o",
+		"lat": 531423672,
+		"lng": -76920536
+	},
+	"IL": {
+		"id": "ChIJi8mnMiRJABURuiw1EyBCa2o",
+		"lat": 310460510,
+		"lng": 348516120
+	},
+	"IT": {
+		"id": "ChIJA9KNRIL-1BIRb15jJFz1LOI",
+		"lat": 418719400,
+		"lng": 125673800
+	},
+	"JP": {
+		"id": "ChIJLxl_1w9OZzQRRFJmfNR1QvU",
+		"lat": 362048240,
+		"lng": 1382529240
+	},
+	"MY": {
+		"id": "ChIJrzBnX5fTNDAR2BwhKJOWRQc",
+		"lat": 42104840,
+		"lng": 1019757659
+	},
+	"MX": {
+		"id": "ChIJU1NoiDs6BIQREZgJa760ZO0",
+		"lat": 236345010,
+		"lng": -1025527840
+	},
+	"NL": {
+		"id": "ChIJu-SH28MJxkcRnwq9_851obM",
+		"lat": 521326330,
+		"lng": 52912659
+	},
+	"NZ": {
+		"id": "ChIJh5Z3Fw4gLG0RM0dqdeIY1rE",
+		"lat": -409005570,
+		"lng": 1748859710
+	},
+	"NI": {
+		"id": "ChIJzSL_zgDCEI8RtRWsP-Wn-sg",
+		"lat": 128654160,
+		"lng": -852072290
+	},
+	"NG": {
+		"id": "ChIJDY2kfa8LThARyAvFaEH-qJk",
+		"lat": 90819990,
+		"lng": 86752770
+	},
+	"NO": {
+		"id": "ChIJv-VNj0VoEkYRK9BkuJ07sKE",
+		"lat": 604720239,
+		"lng": 84689459
+	},
+	"PY": {
+		"id": "ChIJYz3xkDQIXJQR8y5YHWH_-rM",
+		"lat": -234425030,
+		"lng": -584438320
+	},
+	"PE": {
+		"id": "ChIJ9RRZwFDIBZERSAYheRIBnvI",
+		"lat": -91899670,
+		"lng": -750151520
+	},
+	"PL": {
+		"id": "ChIJuwtkpGSZAEcR6lXMScpzdQk",
+		"lat": 519194380,
+		"lng": 191451360
+	},
+	"PT": {
+		"id": "ChIJ1SZCvy0kMgsRQfBOHAlLuCo",
+		"lat": 393998719,
+		"lng": -82244540
+	},
+	"RO": {
+		"id": "ChIJw3aJlSb_sUARlLEEqJJP74Q",
+		"lat": 459431610,
+		"lng": 249667600
+	},
+	"RU": {
+		"id": "ChIJ-yRniZpWPEURE_YRZvj9CRQ",
+		"lat": 615240100,
+		"lng": 1053187559
+	},
+	"SA": {
+		"id": "ChIJQSqV5z-z5xURm7YawktQYFk",
+		"lat": 238859420,
+		"lng": 450791619
+	},
+	"SG": {
+		"id": "ChIJdZOLiiMR2jERxPWrUs9peIg",
+		"lat": 13520830,
+		"lng": 1038198360
+	},
+	"SK": {
+		"id": "ChIJf8Z8rrlgFEcRfTpysWdha80",
+		"lat": 486690260,
+		"lng": 196990240
+	},
+	"SI": {
+		"id": "ChIJYYOWXuckZUcRZdTiJR5FQOc",
+		"lat": 461512410,
+		"lng": 149954630
+	},
+	"ZA": {
+		"id": "ChIJURLu2YmmNBwRoOikHwxjXeg",
+		"lat": -305594820,
+		"lng": 229375060
+	},
+	"ES": {
+		"id": "ChIJi7xhMnjjQgwR7KNoB5Qs7KY",
+		"lat": 404636670,
+		"lng": -37492200
+	},
+	"LK": {
+		"id": "ChIJnR5a9jxZ4joRjNPiALSkPeE",
+		"lat": 78730539,
+		"lng": 807717969
+	},
+	"SE": {
+		"id": "ChIJ8fA1bTmyXEYRYm-tjaLruCI",
+		"lat": 601281610,
+		"lng": 186435010
+	},
+	"CH": {
+		"id": "ChIJYW1Zb-9kjEcRFXvLDxG1Vlw",
+		"lat": 468181880,
+		"lng": 82275119
+	},
+	"TH": {
+		"id": "ChIJsU1CR_eNTTARAuhXB4gs154",
+		"lat": 158700320,
+		"lng": 1009925410
+	},
+	"TN": {
+		"id": "ChIJ4aQWg0SVVRIR75sBqjozhDo",
+		"lat": 338869169,
+		"lng": 95374990
+	},
+	"TR": {
+		"id": "ChIJcSZPllwVsBQRKl9iKtTb2UA",
+		"lat": 389637450,
+		"lng": 352433220
+	},
+	"TW": {
+		"id": "ChIJL1cHXAbzbjQRaVScvwTwEec",
+		"lat": 236978100,
+		"lng": 1209605150
+	},
+	"UA": {
+		"id": "ChIJjw5wVMHZ0UAREED2iIQGAQA",
+		"lat": 483794330,
+		"lng": 311655800
+	},
+	"AE": {
+		"id": "ChIJvRKrsd9IXj4RpwoIwFYv0zM",
+		"lat": 234240760,
+		"lng": 538478180
+	},
+	"GB": {
+		"id": "ChIJqZHHQhE7WgIReiWIMkOg-MQ",
+		"lat": 553780510,
+		"lng": -34359730
+	},
+	"US": {
+		"id": "ChIJCzYy5IS16lQRQrfeQ5K5Oxw",
+		"lat": 370902400,
+		"lng": -957128910
+	},
+	"UY": {
+		"id": "ChIJCd5f-zoHdZURSlIWYGGWVUo",
+		"lat": -325227790,
+		"lng": -557658350
+	},
+	"VE": {
+		"id": "ChIJAdjLNstTKIwR003VfFjyoNw",
+		"lat": 64237500,
+		"lng": -665897300
+	},
+	"VN": {
+		"id": "ChIJXx5qc016FTERvmL-4smwO7A",
+		"lat": 140583240,
+		"lng": 1082771990
+	},
+	"RS": {
+		"id": "ChIJlYCJ8t8dV0cRXYYjN-pQXgU",
+		"lat": 440165210,
+		"lng": 210058590
+	}
+}

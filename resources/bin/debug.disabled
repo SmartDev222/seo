@@ -1,0 +1,121 @@
+<?php
+$continueWithoutSQL = true;
+require "../../includes/init.php";
+?>
+
+<div style="width: 934px; margin: 80px auto;">
+    <h1>SEO Studio</h1>
+    <h4 style="margin: 0 0 30px;">PHP Diagnostics</h4>
+
+    <p style="margin: 0 0 30px;">Below is the environment overview. Following it is the phpinfo() call. The bottom of this document contains an overview of the application's files and their read/write permissions.</p>
+
+    <pre><?php
+    $c = include "../../config.php";
+
+    $d = array(
+        "config.valid" => is_array($c)
+    );
+
+    if (class_exists('Studio\Base\PlatformMeta')) {
+        $d['studio.buildNo'] = Studio\Base\PlatformMeta::VERSION;
+        $d['studio.buildString'] = Studio\Base\PlatformMeta::VERSION_STR;
+        $d['studio.buildDate'] = Studio\Base\PlatformMeta::VERSION_DATE;
+    }
+    else {
+        $d['platformMeta'] = "missing";
+        $d['studio.buildNo'] = "missing";
+        $d['studio.buildString'] = "missing";
+        $d['studio.buildDate'] = "missing";
+    }
+
+    if (is_array($c)) {
+        if (isset($c['errors'])) {
+            $d['config.showErrors'] = $c['errors']['show'];
+            $d['config.errorLevel'] = $c['errors']['level'];
+        }
+        else {
+            $d['config.errors'] = "missing";
+        }
+    }
+
+    if (isset($account)) {
+        $d['session.authenticated'] = $account->isLoggedIn();
+        $d['session.website'] = $account->getCurrentWebsite();
+        if ($account->isLoggedIn())
+            $d['session.cookieValid'] = is_array($_SESSION['user']);
+    }
+    else {
+        $d['session.authenticated'] = false;
+        $d['session.accountVar'] = "missing";
+    }
+
+    if (isset($language)) {
+        $d['lang.init'] = true;
+        $d['lang.basedir'] = $language->basedir;
+        $d['lang.file'] = $language->file;
+        $d['lang.google'] = $language->google;
+        $d['lang.locale'] = $language->locale;
+        $d['lang.language'] = $language->language;
+        $d['*notice'] = "locale and language should match";
+        $d['lang.name'] = $language->name;
+        $d['lang.translations'] = count($language->translations);
+        $d['lang.loadedFiles'] = $language->loadedFiles;
+    }
+
+    $d['sql.error'] = mysqli_error($studio->sql);
+    $d['sql.connectError'] = mysqli_connect_error();
+
+    print_r($d);
+    ?></pre>
+</div>
+
+<?php
+phpinfo();
+
+$dir = realpath("../../");
+$w = array();
+
+// should have made a recursive function but oh well, this is nothing important...
+
+foreach (scandir($dir) as $file) {
+    if ($file == "." || $file == "..") continue;
+    $path = $dir . DIRECTORY_SEPARATOR . $file;
+    $w[$path] = "r:" .  (is_readable($path) ? "Y" : "N") . " w:" . (is_writable($path) ? "Y" : "N");
+
+    if (is_dir($path)) {
+        foreach (scandir($path) as $file2) {
+            if ($file2 == "." || $file2 == "..") continue;
+            $path2 = $path . DIRECTORY_SEPARATOR . $file2;
+            $w[$path2] = "r:" .  (is_readable($path2) ? "Y" : "N") . " w:" . (is_writable($path2) ? "Y" : "N");
+
+            if (is_dir($path2)) {
+                foreach (scandir($path2) as $file3) {
+                    if ($file3 == "." || $file3 == "..") continue;
+                    $path3 = $path2 . DIRECTORY_SEPARATOR . $file3;
+                    $w[$path3] = "r:" .  (is_readable($path3) ? "Y" : "N") . " w:" . (is_writable($path3) ? "Y" : "N");
+
+                    if (is_dir($path3)) {
+                        foreach (scandir($path3) as $file4) {
+                            if ($file4 == "." || $file4 == "..") continue;
+                            $path4 = $path3 . DIRECTORY_SEPARATOR . $file4;
+                            $w[$path4] = "r:" .  (is_readable($path4) ? "Y" : "N") . " w:" . (is_writable($path4) ? "Y" : "N");
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+echo "<div style='width: 934px; margin: 30px auto;'><hr><h3>Can PHP write to files?</h3>";
+echo "<pre>";
+foreach ($w as $path => $rw) {
+    if (stripos($rw, "r:N") !== false || stripos($rw, "w:N") !== false) {
+        echo "<span style='color: red;'>[$path] => $rw</span>" . PHP_EOL;
+    }
+    else {
+        echo "[$path] => $rw" . PHP_EOL;
+    }
+}
+echo "</pre></div>";
+?>

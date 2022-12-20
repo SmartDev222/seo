@@ -1,0 +1,123 @@
+// main: ../index.scss
+
+$table-border-radius: 6px;
+
+.table-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	margin-bottom: 21px;
+
+	h1 {
+		margin-bottom: 0;
+	}
+
+	h1 + p {
+		font-size: 16px;
+		color: #666;
+		margin: 0;
+		padding: 0;
+	}
+}
+
+.table-responsive, .table-responsive-md {
+	// box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.175);
+	border-radius: $table-border-radius;
+
+	&.scroll-vertical {
+		max-height: 300px;
+		overflow-y: auto;
+	}
+}
+
+.table {
+	margin: 0;
+
+	--bs-table-hover-bg: rgba(0, 0, 0, 0.027);
+
+	thead {
+		tr {
+			background-color: #f0f3f7;
+			border-radius: 4px;
+
+			th {
+				color: #808da1;
+				font-size: 15px;
+				font-weight: 400;
+				padding: 0 22px;
+				text-align: left;
+				vertical-align: middle;
+				line-height: 46px;
+				border-bottom: 0;
+
+				&.center { text-align: center; }
+				&.right { text-align: right; }
+
+				&:first-of-type {
+					border-radius: $table-border-radius 0 0 $table-border-radius;
+				}
+
+				&:last-of-type {
+					border-radius: 0 $table-border-radius $table-border-radius 0;
+				}
+			}
+		}
+	}
+
+	tbody {
+		border-top: 0 !important;
+
+		tr {
+			vertical-align: middle;
+
+			td {
+				background-color: #fff;
+				border-bottom: 1px solid #f0f3f7;
+				padding: 13px 22px;
+				font-size: 14px;
+				color: #666;
+				vertical-align: middle;
+
+				&.center {
+					text-align: center;
+				}
+
+				&.right {
+					text-align: right;
+					white-space: nowrap;
+
+					.dropdown {
+						margin-top: -12px;
+						margin-bottom: -13px;
+
+						& > button.btn {
+							border: 0;
+							background-color: transparent;
+							padding-left: 10px;
+							padding-right: 10px;
+						}
+					}
+				}
+
+				a.fill {
+					display: block;
+					text-decoration: inherit;
+					color: inherit;
+				}
+
+				&:first-of-type {
+					border-radius: $table-border-radius 0 0 $table-border-radius;
+				}
+
+				&:last-of-type {
+					border-radius: 0 $table-border-radius $table-border-radius 0;
+				}
+			}
+
+			&:last-of-type td {
+				border-bottom: 0;
+			}
+		}
+	}
+}

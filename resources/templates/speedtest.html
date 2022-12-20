@@ -1,0 +1,145 @@
+<style type="text/css">
+    .status-label {
+        display: inline-block;
+        background-color: #999;
+        border-radius: 3px;
+        padding: 2px 4px;
+        font-size: 11px;
+        font-weight: 600;
+        color: #fff;
+        margin-right: 5px;
+    }
+
+    .status-label.blue { background-color: #3da4f0; }
+    .status-label.green { background-color: #71c242; }
+    .status-label.orange { background-color: #fdb646; }
+</style>
+
+<div class="form-container">
+    <h2>{{Select Region}}</h2>
+
+    <form action="" method="POST">
+        <div class="tool-form">
+            <div class="input">
+                <select name="region" style="border: 1px solid #ddd; border-radius: 3px; height: 28px; margin: 0px 10px 0 0px; padding: 0 0 0 5px; font: inherit; font-size: 13px;">
+                    [[REGIONS]]
+                </select>
+            </div>
+            <div class="button">
+                <button type="submit" class="loadable">{{Test}}</button>
+            </div>
+        </div>
+    </form>
+</div>
+
+<div class="stats">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[SCORE]]</h3>
+                <span>{{score}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[TIME]]</h3>
+                <span>{{load time}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[SIZE]]</h3>
+                <span>{{page size}}</span>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="statistic">
+                <h3>[[REQUESTS]]</h3>
+                <span>{{requests}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="table-container">
+    <h2>{{Response codes}}</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>{{Response code}}</th>
+                <th width="140px">{{Responses}}</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><span class="status-label green">200</span> OK</td>
+                <td>[[REQUESTS:200]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label green">204</span> No Content</td>
+                <td>[[REQUESTS:204]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label blue">301</span> Moved Permanently</td>
+                <td>[[REQUESTS:301]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label blue">302</span> Found</td>
+                <td>[[REQUESTS:302]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label orange">401</span> Unauthorized</td>
+                <td>[[REQUESTS:401]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label orange">403</span> Access Denied</td>
+                <td>[[REQUESTS:403]]</td>
+            </tr>
+            <tr>
+                <td><span class="status-label orange">404</span> Not Found</td>
+                <td>[[REQUESTS:404]]</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <div class="table-container">
+            <h2>{{Content size}}</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{Content type}}</th>
+                        <th width="140px">{{Percent}}</th>
+                        <th width="140px">{{Size}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    [[DYNAMIC_CONTENT_SIZE]]
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="table-container">
+            <h2>{{Content requests}}</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>{{Content type}}</th>
+                        <th width="140px">{{Percent}}</th>
+                        <th width="140px">{{Requests}}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    [[DYNAMIC_CONTENT_REQUESTS]]
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

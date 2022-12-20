@@ -1,0 +1,16 @@
+{
+    "Incorrect email or password.": "Incorrect email or password.",
+    "Please enter an email and password.": "Please enter an email and password.",
+    "Passwords don't match.": "Passwords don't match.",
+    "Password must be at least 6 characters.": "Password must be at least 6 characters.",
+    "Invalid email. Did you mean {$1}?": "Invalid email. Did you mean {$1}?",
+    "Invalid email.": "Invalid email.",
+    "There is an account with that email, please login.": "There is an account with that email, please login.",
+    "Website already exists.": "Website already exists.",
+    "Invalid website.": "Invalid website.",
+    "Please enter a valid website.": "Please enter a valid website.",
+    "Tool not found": "Tool not found",
+    "We couldn't find an account with that email.": "We couldn't find an account with that email.",
+    "The link you followed has expired. Please try requesting another reset link.": "The link you followed has expired. Please try requesting another reset link.",
+    "The link you followed has expired.": "The link you followed has expired."
+}

@@ -1,0 +1,186 @@
+// main: ../index.scss
+
+section.jumbo {
+    background-color: #2196F3;
+    background-image: url(../images/jumbomask.png?v=3);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: center center;
+    padding: 140px 20px;
+    color: #fff;
+    text-align: center;
+
+    h1 {
+        font-size: 36px;
+        font-weight: 300;
+        margin: 0 0 15px;
+        padding: 0;
+    }
+
+    h2 {
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0 0 30px;
+        padding: 0;
+    }
+
+    a {
+        display: inline-block;
+        background-color: transparent;
+
+        color: #fff;
+        font-size: 19px;
+        text-decoration: none;
+
+        border: 2px solid #fff;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+        padding: 10px 25px;
+
+        transition: background-color 0.2s, color 0.2s;
+
+        &:hover {
+            color: #2196F3;
+            background-color: #fff;
+        }
+    }
+
+    @media (max-width: 1785px) {
+        background-size: auto 100%;
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 20px;
+
+        h1 {
+            font-size: 28px;
+        }
+
+        h2 {
+            font-size: 21px;
+        }
+
+        a {
+            font-size: 16px;
+            padding: 8px 20px;
+        }
+    }
+}
+
+section.icons {
+    background-color: #F5F5F5;
+    padding: 90px 20px;
+
+    .icon {
+        margin: 0 0 20px;
+
+        i {
+            font-size: 64px;
+            color: #777;
+            transition: color 0.2s;
+        }
+    }
+
+    h3 {
+        font-size: 21px;
+        color: #555;
+        margin: 0 0 7px;
+        transition: color 0.2s;
+    }
+
+    p {
+        font-size: 16px;
+        color: #777;
+        transition: color 0.2s;
+    }
+
+    .col-md-4 {
+        text-align: center;
+
+        &:hover {
+            h3 { color: #333; }
+            p { color: #444; }
+            .icon i { color: #2196F3; }
+        }
+    }
+
+    @media (max-width: 991px) {
+        padding: 50px 20px;
+
+        .col-md-4 {
+            p {
+                margin-bottom: 50px;
+            }
+
+            &:last-child p {
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+section.home-tools {
+    background-color: #e4e4e4;
+    padding: 100px 20px;
+    text-align: center;
+
+    h4 {
+        color: #fff;
+        font-size: 24px;
+        font-weight: 300;
+        margin: 0 0 20px;
+    }
+
+    input {
+        background-color: #d1d1d1;
+
+        font: inherit;
+        font-size: 18px;
+        color: #333;
+
+        border: 0;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+        padding: 12px 25px;
+        margin-right: 5px;
+
+        width: 100%;
+        max-width: 400px;
+    }
+
+    button {
+        background-color: #2196F3;
+
+        font: inherit;
+        font-size: 18px;
+        color: #fff;
+
+        border: 0;
+        border-radius: 3px;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+
+        padding: 12px 30px;
+    }
+
+    @media (max-width: 768px) {
+        padding: 50px 20px;
+
+        input {
+            margin-bottom: 10px;
+            margin-right: 0;
+        }
+    }
+}
+
+.home-content--middle {
+    background-color: #fbfbfb;
+}
+
+.home-content--bottom {
+    background-color: #f5f5f5;
+}

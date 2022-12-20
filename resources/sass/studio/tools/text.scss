@@ -1,0 +1,65 @@
+// main: ../index.scss
+
+.text-container {
+    margin: 0 0 25px;
+
+    background-color: #fff;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+
+    h2 {
+        font-size: 21px;
+        padding: 20px 25px;
+        border-bottom: 2px solid #eef3f6;
+    }
+
+    .text {
+        padding: 25px 25px 0;
+        color: #555;
+        word-break: break-all;
+
+        &:after {
+            display: table;
+            clear: both;
+            content: '';
+        }
+    }
+
+    h3 {
+        font-size: 16px;
+    }
+
+    ul {
+        margin: 12px 0 25px;
+
+        li {
+            list-style-type: disc;
+            margin: 0 0 0 25px;
+            word-break: break-all;
+        }
+    }
+
+    p:last-child {
+        padding-bottom: 25px;
+    }
+}
+
+.info {
+    margin: 0 0 25px;
+    padding: 25px 25px 24px;
+
+    background-color: #fff;
+
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+
+    p {
+        font-size: 16px;
+        color: #777;
+        line-height: 1;
+        margin: 0;
+    }
+}

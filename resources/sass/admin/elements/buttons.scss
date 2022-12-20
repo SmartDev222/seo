@@ -1,0 +1,64 @@
+// main: ../index.scss
+
+.btn-xs {
+    padding: 0 8px;
+    font-size: 11px;
+    border-radius: 2px;
+	line-height: 22px;
+	height: 22px;
+}
+
+.btn-sm {
+	padding: 0 13px;
+    height: 30px;
+    line-height: 29px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.btn-light {
+    border: 1px solid #cfcfcf;
+    background-color: #f7f7f7;
+    color: #666;
+
+	&:hover {
+		border: 1px solid #c5c5c5;
+	}
+}
+
+.btn {
+	svg {
+		margin-top: -2px;
+		margin-right: 4px;
+		margin-left: -2px;
+	}
+}
+
+.btn-primary {
+    background-color: #146fe2;
+    border-color: #146fe2;
+	color: #fff;
+
+	&:hover, &:focus {
+		background-color: darken(#146fe2, 5%);
+		border-color: darken(#146fe2, 5%);
+		color: #fff;
+	}
+
+	&:active {
+		background-color: darken(#146fe2, 10%);
+		border-color: darken(#146fe2, 10%);
+		color: #fff;
+	}
+}
+
+.btn-danger {
+    background-color: #F44336;
+    border-color: #E53935;
+    color: #fff;
+
+	&:hover {
+		background-color: #E53935;
+		color: #fff;
+	}
+}
